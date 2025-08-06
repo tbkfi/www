@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+	{{ partial "header.html" . }}
+	<main>
+		<div id="container">
+			<article class="contentList">
+				<h1>{{ .Title }}</h1>
+				<ul class="listTags">
+					{{ range .Site.Taxonomies.tags }}
+					<li><a class="tag" href="{{ .Page.Permalink }}">{{ .Page.Title | upper }}</a></li>
+					{{ end }}
+				</ul>
+				<hr>
+				<ul>
+					{{ range .Pages }}
+					<li class=contentItem>
+						<p><span class="date">{{ .Date.Format "2006-01-02" }}</span> <a href="{{ .Permalink }}" class="title">{{ .Title }}</a></p>
+					</li>
+					{{ end }}
+				</ul>
+			</article>
+		</div>
+	</main>
+	{{ partial "footer.html" . }}
+</body>

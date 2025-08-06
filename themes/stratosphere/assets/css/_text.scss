@@ -1,0 +1,121 @@
+
+h1,h2,h3,h4,h5,h6 {
+	color: var(--clr-black);
+	font-family: FontSerif, serif;
+	font-style: normal;
+	line-height: normal;
+	margin-bottom: var(--font-margin);
+}
+h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
+	font-family: FontSerifItalic, serif;
+	font-style: italic;
+}
+h1 {
+	font-size: var(--font-h1-size);
+	font-weight: 700;
+}
+h2 {
+	font-size: var(--font-h2-size);
+	font-weight: 600;
+}
+h3 {
+	font-size: var(--font-h3-size);
+	font-weight: 650;
+}
+h4 {
+	font-size: var(--font-h4-size);
+	font-weight: 600;
+}
+h5 {
+	font-size: var(--font-h5-size);
+	font-weight: 550;
+}
+h6 {
+	font-size: var(--font-h6-size);
+	font-weight: 500;
+}
+p {
+	color: var(--clr-black);
+	font-family: FontDisplayPrimary, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	margin-bottom: var(--spacing-m);
+	font-size: var(--font-p-size);
+}
+strong {
+	font-weight: 700;
+}
+em {
+	font-style: italic;
+}
+a {
+	text-decoration: none;
+	color: var(--clr-accent-blue);
+}
+a:hover {
+	color: var(--clr-accent-red);
+}
+a:visited {
+	color: none;
+}
+
+::selection {
+	color: var(--clr-black);
+	background: var(--clr-accent-yellow);
+}
+::-moz-selection {
+	color: var(--clr-black);
+	background: var(--clr-accent-yellow);
+}
+
+/* MISC */
+.txt-glow-warm {
+	background: linear-gradient(
+		-90deg,
+		var(--clr-accent-red),
+		DarkOrange,
+		var(--clr-accent-red)
+	)
+	0 0 / 400% 100%;
+	color: transparent;
+	background-clip: text;
+}
+a.txt-glow-warm:hover {
+	border-bottom: 0.10em solid var(--clr-white);
+}
+@media (prefers-reduced-motion: no-preference) {
+	.txt-glow-warm {
+	animation: move-bg 20s linear infinite;
+	}
+	@keyframes move-bg {
+	to {
+		background-position: 400% 0;
+	}
+	}
+}
+
+.txt-glow-cold {
+	background: linear-gradient(
+		-90deg,
+		var(--clr-accent-blue),
+		DeepSkyBlue,
+		var(--clr-accent-blue)
+	)
+	0 0 / 400% 100%;
+	color: transparent;
+	background-clip: text;
+}
+a.txt-glow-cold:hover {
+	border-bottom: 0.10em solid var(--clr-white);
+}
+@media (prefers-reduced-motion: no-preference) {
+	.txt-glow-cold {
+		animation: move-bg 20s linear infinite;
+	}
+	@keyframes move-bg {
+		to {
+			background-position: 400% 0;
+		}
+	}
+}

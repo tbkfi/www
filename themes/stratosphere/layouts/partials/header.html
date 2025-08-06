@@ -1,0 +1,13 @@
+<header>
+	<nav>
+		<ul id="navHeader">
+			<li><h1><a href="{{ .Site.BaseURL }}" class="txt-glow-warm">WWW.TBK.FI /</a></h1></li>
+			{{ if ne .Type "page" }}
+			<li><h1><a href="{{ .Site.BaseURL }}{{ .Section }}/" class="txt-glow-warm"> {{ .Type | upper }} /</a></h1></li>
+			{{ end }}
+			{{ if ne .Title "WWW.TBK.FI" "Articles" "Reflections" "Tags" }}
+			<li><h1><a href="{{ .Page.Permalink }}" class="txt-glow-warm"> 🔗 </a></h1></li>
+			{{ end }}
+		</ul>
+	</nav>
+</header>

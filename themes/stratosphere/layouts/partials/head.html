@@ -1,0 +1,12 @@
+{{ $scss := resources.Get "css/main.scss" | toCSS | minify | fingerprint }}
+{{ $js := resources.Get "js/main.js" | js.Build | minify | fingerprint }}
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+	<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+	<link rel="icon" type="image/x-icon" href="{{ "favicon.svg" | relURL }}">
+	<link href="{{ $scss.RelPermalink }}" rel="stylesheet" integrity="{{ $scss.Data.Integrity }}">
+	<script type="text/javascript" src="{{ $js.RelPermalink }}" defer integrity="{{ $js.Data.Integrity }}"></script>
+	<!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'">-->
+</head>

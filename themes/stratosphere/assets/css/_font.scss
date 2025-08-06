@@ -1,0 +1,48 @@
+@font-face {
+	font-family: "FontDisplayPrimary";
+	font-style: normal;
+	src: url("/font/display/Nunito-Variable/Nunito.woff2") format("woff2");
+	font-display: swap;
+}
+@font-face {
+	font-family: "FontDisplayPrimaryItalic";
+	font-style: normal;
+	src: url("/font/display/Nunito-Variable/Nunito-Italic.woff2") format("woff2");
+	font-display: swap;
+}
+@font-face {
+	font-family: "FontDisplay";
+	font-style: normal;
+	src: url("/font/display/Dosis-Variable/Dosis.woff2") format("woff2");
+	font-display: swap;
+}
+@font-face {
+	font-family: "FontDisplayItalic";
+	font-style: italic;
+	src: url("/font/display/Dosis-Variable/Dosis.woff2") format("woff2");
+	font-display: swap;
+}
+@font-face {
+	font-family: "FontSerif";
+	font-style: normal;
+	src: url("/font/serif/Noto-Variable/Noto.woff2") format("woff2");
+	font-display: swap;
+}
+@font-face {
+	font-family: "FontSerifItalic";
+	font-style: italic;
+	src: url("/font/serif/Noto-Variable/Noto-Italic.woff2") format("woff2");
+	font-display: swap;
+}
+@font-face {
+	font-family: "FontMonospace";
+	font-style: normal;
+	src: url("/font/monospace/MapleMono-Variable/MapleMono.woff2") format("woff2");
+	font-display: swap;
+}
+@font-face {
+	font-family: "FontMonospaceItalic";
+	font-style: italic;
+	src: url("/font/monospace/MapleMono-Variable/MapleMono-Italic.woff2") format("woff2");
+	font-display: swap;
+}

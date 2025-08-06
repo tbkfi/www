@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<!-- NOTE: inject to "head.html"
+	<meta name="author" content="{{ .Params.author }}">
+	<meta name="description" content="{{ .Title }}">
+-->
+{{ partial "head.html" . }}
+<body>
+	{{ partial "header.html" . }}
+	<main>
+		<div id="container">
+			<h1 class="singleTitle">{{ .Title }}</h1>
+			<h2 class="singleReadingTime">{{ .Date.Format "2006-01-02" }} / {{ .ReadingTime }} minute(s)</h2>
+			<ul class="tags singleTags">
+				{{ range .Params.tags }}
+				<li><a class="tag" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | upper }}</a></li>
+				{{ end }}
+			</ul>
+			<ul class="singleNav">
+				<a href="{{ with .Prev }}{{ .RelPermalink }}{{ end }}" class="previous">Previous</a>
+				<a href="{{ with .Next }}{{ .RelPermalink }}{{ end }}" class="next">Next</a>
+			</ul>
+			<hr>
+			{{ .TableOfContents }}
+			{{ .Content }}
+		</div>
+	</main>
+	{{ partial "footer.html" . }}
+</body>

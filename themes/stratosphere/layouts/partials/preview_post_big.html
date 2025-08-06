@@ -1,0 +1,22 @@
+<article class="contentPreview previewPost">
+	<a href="post/" class="header">
+		<h1>Posts</h1>
+		<h2>Topic specific content pieces</h2>
+	</a>
+	{{ range where .Site.RegularPages "Section" "post" }}
+	<section class="previewEntry">
+		<div>
+			<ul class="meta">
+				<li class="date"><em>{{ .Date.Format "2006-01-02" }}</em></li>
+				<li class="title">{{ .Title }}</li>
+				<li class="tags">{{ range .Params.tags }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">{{ . | upper }}</a>{{ end }}</li>
+				<li class="description">{{ .Summary | truncate 220 }}</li>
+				{{ if .Truncated }}
+				<li class="link"><a href="{{ .Permalink }}">Read more</a></li>
+				<li class="readtime">{{ .ReadingTime }} minute(s)</li>
+				{{ end }}
+			</ul>
+		</div>
+	</section>
+	{{ end }}
+</article>

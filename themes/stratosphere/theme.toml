@@ -1,0 +1,14 @@
+name = "stratosphere"
+license = "GPLv3"
+licenselink = "https://www.gnu.org/licenses/gpl-3.0.html"
+
+description = "An airy, intentional, and uncomplicated theme for Hugo websites."
+homepage = "https://git.tbk.fi/tbk/stratosphere"
+
+# Taxonomy terms
+#tags = ["blog", "company"]
+#features = ["some", "awesome", "features"]
+
+[author]
+    name = "Tuomo Björk"
+    homepage = "https://www.tbk.fi/"
