@@ -1,3 +1,6 @@
 /public
 /resources
 /.hugo_build.lock
+
+/content/st-restricted
+/content/st-private
