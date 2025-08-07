@@ -49,3 +49,7 @@ Logs are simple entries of read books, watched movies, or played games. That sor
 thing. And in scope they might be nothing more than a single line, or a more thorough
 review.
 
+## Sources
+
+The website sources are mirrored to [GitHub](https://github.com/tbkfi/www), including the
+custom Hugo theme.
