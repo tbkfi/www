@@ -1,0 +1,40 @@
+header * {
+	font-family: FontDisplayPrimary;
+}
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+
+	user-select: none;
+}
+header > nav {
+    width: 100%;
+    height: auto;
+
+    padding-bottom: var(--spacing-m);
+}
+header > nav > ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+    width: auto;
+	height: auto;
+
+    list-style-type: none;
+
+    padding: 0;
+    margin: 0;
+    
+}
+header > nav > ul > li {
+    margin-left: 0.75rem;
+    font-size: var(--font-h1-size);
+}
+header > nav > ul > li > a {
+	color: transparent; /* don't obscure parent styling! */
+}
+header > nav > ul > li > a:hover {
+	color: transparent; /* don't obscure parent styling! */
+}

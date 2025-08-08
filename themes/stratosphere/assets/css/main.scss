@@ -1,9 +1,18 @@
 @import "reset";
 @import "var";
 
-@import "element";
-@import "text";
+// Document Base
+@import "canvas";
+@import "header";
+@import "footer";
 
+// Elements
+@import "text";
+@import "img";
+
+// Partials & Structures
+@import "single";
 @import "base";
 
+// Assets
 @import "font";

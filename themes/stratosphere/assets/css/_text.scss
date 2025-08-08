@@ -1,4 +1,3 @@
-
 h1,h2,h3,h4,h5,h6 {
 	color: var(--clr-black);
 	font-family: FontSerif, serif;
@@ -36,18 +35,20 @@ h6 {
 }
 p {
 	color: var(--clr-black);
-	font-family: FontDisplayPrimary, sans-serif;
+	font-family: FontDisplayPrimary, display, sans-serif;
 	font-style: normal;
 	font-weight: 400;
-	line-height: normal;
+	line-height: var(--font-p-lineheight);
 	margin-bottom: var(--spacing-m);
 	font-size: var(--font-p-size);
 }
 strong {
-	font-weight: 700;
+    font-style: bold;
+	font-weight: 800;
 }
 em {
 	font-style: italic;
+    font-weight: 600;
 }
 a {
 	text-decoration: none;
@@ -69,7 +70,85 @@ a:visited {
 	background: var(--clr-accent-yellow);
 }
 
-/* MISC */
+ul {
+	list-style-type: disc;
+	padding-left: var(--spacing-m);
+	margin-bottom: var(--spacing-m);
+}
+
+ul li {
+	margin-top: var(--spacing-s);
+	font-size: var(--font-p-size);
+}
+ol {
+	list-style-type: decimal;
+	padding-left: var(--spacing-m); /* Indent the list */
+	margin-bottom: var(--spacing-m);
+}
+
+ol li {
+	margin-top: var(--spacing-s);
+	font-size: var(--font-p-size);
+}
+
+blockquote {
+	font-family: FontSerifItalic;
+	border-left: var(--spacing-m) solid var(--clr-accent-green); /* left accent border */
+	padding: var(--spacing-m);
+	margin: var(--spacing-l) 0 var(--spacing-l) 0;
+	background-color: var(--clr-grey);
+	quotes: "“" "”" "‘" "’";
+}
+blockquote:before {
+	content: open-quote;
+	font-size: var(--font-h1-size);
+	line-height: 0;
+	margin-right: var(--spacing-m);
+	vertical-align: calc( -0.75 * var(--spacing-m));
+	color: var(--clr-accent-yellow);
+}
+blockquote p {
+	display: inline;
+	font-style: italic;
+	font-size: var(--font-h5-size);
+	color: var(--clr-white);
+}
+
+code {
+	font-family: FontMonospace;
+	color: black;
+	background-color: wheat;
+	padding: 0 var(--spacing-s) 0 var(--spacing-s);
+	border-radius: var(--spacing-s);
+}
+
+table {
+	font-family: FontMonospace;
+	font-size: calc(0.75 * var(--font-p-size));
+	margin-bottom: var(--spacing-l);
+	margin-top: var(--spacing-l);
+}
+table * {
+	border: solid 1px;
+	padding: calc(0.75 * var(--spacing-s));
+}
+thead {
+	font-weight: 700;
+}
+tbody {
+}
+tr {
+}
+td {
+	text-align: center;
+	padding: calc(1.5 * var(--spacing-s));
+}
+hr {
+	color: var(--clr-grey);
+	margin-top: var(--spacing-l);
+	margin-bottom: var(--spacing-l);
+}
+// SFX: Warm Glow
 .txt-glow-warm {
 	background: linear-gradient(
 		-90deg,
@@ -95,6 +174,7 @@ a.txt-glow-warm:hover {
 	}
 }
 
+// SFX: Cold Glow
 .txt-glow-cold {
 	background: linear-gradient(
 		-90deg,

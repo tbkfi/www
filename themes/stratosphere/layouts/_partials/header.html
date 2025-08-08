@@ -1,0 +1,19 @@
+{{ $url := urls.Parse .Site.BaseURL }}
+{{ $domain := $url.Host }}
+<header>
+	<nav>
+		<ul>
+			<!-- Site Root -->
+			<li>
+				<a class="txt-glow-warm" href="{{ relURL "" }}">{{ $domain | upper }} /</a>
+			</li>
+			<!-- Site Path -->
+			{{ if ne .Type "page" }}
+			<li>
+				<!--<a class="txt-glow-warm" href="{{ .Site.BaseURL }}{{ .Section }}/"> {{ .Type | upper }} /</a> -->
+				<a class="txt-glow-warm" href="{{ .Site.BaseURL }}{{ .Section }}/"> {{ .Type | upper }} /</a>
+			</li>
+			{{ end }}
+		</ul>
+	</nav>
+</header>

@@ -1,0 +1,76 @@
+article.single > section.type-meta * {
+	font-family: FontDisplayPrimary;
+	text-align: center;	
+
+    margin: 0;
+    padding: 0;
+}
+article.single > section.type-meta > .title {
+    font-size: var(--font-h1-size);
+}
+article.single > section.type-meta > .time {
+    font-size: var(--font-h4-size);
+	color: var(--clr-grey);
+}
+article.single > section.type-meta > .tags {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+    font-size: var(--font-h4-size);
+    margin: 1rem;
+}
+article.single > section.type-meta > .tags > .tag > a {
+    font-size: var(--font-h5-size);
+
+    padding: var(--spacing-s);
+}
+article.single > section.type-meta > .nav {
+	display: flex;
+	justify-content: space-between;
+	list-style-type: none;
+
+    margin: 1rem;
+}
+article.single > section.type-meta > .nav > .prev {
+    text-align: left;
+}
+article.single > section.type-meta > .nav > .next {
+    text-align: right;
+}
+
+article.single > section.type-toc {
+}
+article.single > section.type-content {
+}
+
+
+// Hugo's TOC
+#TableOfContents:before {
+	content: "Contents";
+
+	font-family: FontDisplayPrimary;
+	font-size: var(--font-h2-size);
+	font-weight: 600;
+	color: var(--clr-black);
+
+	margin-bottom: 1rem;
+}
+#TableOfContents {
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+
+	margin-bottom: var(--spacing-s);
+}
+#TableOfContents ul {
+	list-style-type: disc;
+}
+#TableOfContents ul li {
+	font-family: FontDisplayPrimary;
+}
+
+// Consistent section margins
+article.single > section {
+    margin: 0 0 var(--spacing-m) 0;
+}

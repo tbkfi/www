@@ -1,0 +1,47 @@
+footer > h1 {
+// Copyright Notice
+	font-family: FontDisplayPrimary;
+	text-align: center;
+    font-size: var(--font-h3-size);
+	color: var(--clr-white);
+
+    margin-bottom: var(--spacing-s);
+}
+footer > h2 {
+// Author
+	font-family: FontDisplayPrimary;
+	text-align: center;
+    font-size: var(--font-p-size);
+	color: var(--clr-white);
+
+    margin-bottom: var(--spacing-m)
+}
+footer > h2 > a:hover {
+	color: transparent; // don't obscure parent styling! */
+}
+
+footer > nav {
+    padding-bottom: var(--spacing-l);
+}
+footer > nav > ul {
+// Navigation List
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	width: 50%;
+    height: 100%;
+
+	margin: auto;
+    padding: 0;
+}
+footer > nav > ul > li {
+// Navigation Entries
+	list-style-type: none;
+
+	font-family: FontDisplayPrimary;
+    font-size: var(--font-h3-size);
+}
+footer > nav > ul > li > a:hover {
+	color: transparent; // don't obscure parent styling! */
+}
