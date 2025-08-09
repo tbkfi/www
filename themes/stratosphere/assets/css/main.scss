@@ -6,13 +6,14 @@
 @import "header";
 @import "footer";
 
-// Elements
+// Text & Elements
 @import "text";
-@import "img";
+@import "general";
 
 // Partials & Structures
+@import "list";
 @import "single";
-@import "base";
 
-// Assets
+
+// Chonk
 @import "font";

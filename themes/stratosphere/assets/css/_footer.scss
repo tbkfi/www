@@ -3,15 +3,17 @@ footer > h1 {
 	font-family: FontDisplayPrimary;
 	text-align: center;
     font-size: var(--font-h3-size);
+    font-weight: 600;
 	color: var(--clr-white);
 
-    margin-bottom: var(--spacing-s);
+    margin-bottom: var(--spacing-s)
 }
 footer > h2 {
 // Author
 	font-family: FontDisplayPrimary;
 	text-align: center;
     font-size: var(--font-p-size);
+    font-weight: 600;
 	color: var(--clr-white);
 
     margin-bottom: var(--spacing-m)
@@ -41,6 +43,10 @@ footer > nav > ul > li {
 
 	font-family: FontDisplayPrimary;
     font-size: var(--font-h3-size);
+    font-weight: 600;
+
+    margin: 0;
+    padding: 0;
 }
 footer > nav > ul > li > a:hover {
 	color: transparent; // don't obscure parent styling! */

@@ -1,12 +1,10 @@
-{{ $url := urls.Parse .Site.BaseURL }}
-{{ $domain := $url.Host }}
 <footer>
 	<h1 class="txt-glow-warm">All Rights Reserved</h5>
 	<h2>{{ .Site.Params.author }}</h2>
 	<nav>
 		<ul>
 			<li><a class="txt-glow-cold" href="{{ relURL "" }}">index</a></li>
-			<li><a class="txt-glow-cold" href="dir.{{ $domain }}">directory</a></li>
+			<li><a class="txt-glow-cold" href="{{ .Site.Params.directory_url }}">directory</a></li>
 			<li><a class="txt-glow-cold" href="{{ relURL "/about" }}">about</a></li>
 			<li><a class="txt-glow-cold" href="{{ relURL "/privacy" }}">privacy</a></li>
 		</ul>

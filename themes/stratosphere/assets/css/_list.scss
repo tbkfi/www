@@ -1,0 +1,35 @@
+article.list > section.meta > .title {
+	font-family: FontDisplayPrimary;
+	text-align: center;
+}
+
+article.list > section.content {
+    margin: var(--spacing-l);
+    padding: 0;
+}
+
+article.list > section.content > .entries * {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+article.list > section.content > .entries > li {
+    margin-bottom: 0.75rem;
+}
+article.list > section.content > .entries >  > a > .meta {
+	font-family: FontDisplayPrimary;
+    font-size: var(--font-p-size);
+    color: black;
+
+	border-radius: var(--spacing-s);
+    border: var(--spacing-s) var(--clr-black) solid;
+}
+article.list > section.content > .entries > li > a > .title {
+    font-family: FontMonospace;
+    font-size: var(--font-p-size);
+}
+
+article.list > section.content > .entries > li > a:hover {
+}

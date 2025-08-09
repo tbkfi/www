@@ -10,9 +10,12 @@
 	<main>
 		<div id="container">
 			<article class="single">
-				<section class="type-meta">
+				<section class="meta">
 					<h1 class="title">{{ .Title }}</h1>
 					<h2 class="time">{{ .Date.Format "2006-01-02" }} @ {{ .ReadingTime }} minute(s)</h2>
+					<h3 class="section">
+						<a class="txt-glow-warm" href="{{ .CurrentSection.RelPermalink }}">{{ .CurrentSection.Title | lower }}</a>
+					</h3>
 					<ul class="tags">
 						{{ range .Params.tags }}
 						<li class="tag"><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | upper }}</a></li>
@@ -24,8 +27,8 @@
 					</ul>
 					<hr>
 				</section>
-				<section class="type-toc">{{ .TableOfContents }}</section>
-				<section class="type-content">{{ .Content }}</section>
+				<section class="toc">{{ .TableOfContents }}</section>
+				<section class="content">{{ .Content }}</section>
 			</article>
 		</div>
 	</main>

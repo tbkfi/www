@@ -45,16 +45,16 @@
 
 @media (max-width: 750px) {
 	:root {
-		/* -40% relative to default */
+		// -40% relative to default
 		--spacing-s: 0.15rem;
 		--spacing-m: 0.75rem;
 		--spacing-l: 2.25rem;
 		
-		/* -25% relative to default */
+		// -25% relative to default
 		--header-height: 9.0rem;
 		--footer-height: 9.0rem;
 
-		/* -40% relative to default */
+		// -40% relative to default
 		--font-margin: 0.600rem;
 		--font-h1-size: 1.350rem;
 		--font-h2-size: 1.275rem;
@@ -67,16 +67,16 @@
 }
 @media (max-width: 450px) {
 	:root {
-		/* -60% relative to default */
+		// -60% relative to default
 		--spacing-s: 0.10rem;
 		--spacing-m: 0.40rem;
 		--spacing-l: 1.20rem;
 		
-		/* -50% relative to default */
+		// -50% relative to default
 		--header-height: 6.0rem;
 		--footer-height: 6.0rem;
 		
-		/* -60% relative to default */
+		// -60% relative to default
 		--font-margin: 0.500rem;
 		--font-h1-size: 0.900rem;
 		--font-h2-size: 0.850rem;

@@ -5,3 +5,4 @@ theme = "stratosphere"
 
 [params]
     author= "Tuomo Björk"
+    directory_url = "https://dir.tbk.fi/"

@@ -1,76 +1,100 @@
-article.single > section.type-meta * {
+article.single > section.meta * {
 	font-family: FontDisplayPrimary;
 	text-align: center;	
 
     margin: 0;
     padding: 0;
 }
-article.single > section.type-meta > .title {
+
+// Content Title
+article.single > section.meta > .title {
     font-size: var(--font-h1-size);
 }
-article.single > section.type-meta > .time {
+
+// Publish Date & Read time estimate
+article.single > section.meta > .time {
     font-size: var(--font-h4-size);
 	color: var(--clr-grey);
 }
-article.single > section.type-meta > .tags {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
 
-    font-size: var(--font-h4-size);
-    margin: 1rem;
-}
-article.single > section.type-meta > .tags > .tag > a {
-    font-size: var(--font-h5-size);
+// Content Section Name
+article.single > section.meta > .section {
+    font-size: var(--font-h3-size);
+	color: white;
 
-    padding: var(--spacing-s);
+    margin-bottom: var(--spacing-m);
 }
-article.single > section.type-meta > .nav {
+article.single > section.meta > .section > a:hover {
+	color: transparent;
+
+    text-decoration: underline;
+    text-decoration-color: var(--clr-black);
+}
+
+
+
+// Navigation buttons (prev & next)
+article.single > section.meta > .nav {
 	display: flex;
 	justify-content: space-between;
 	list-style-type: none;
 
     margin: 1rem;
 }
-article.single > section.type-meta > .nav > .prev {
+article.single > section.meta > .nav > .prev {
     text-align: left;
 }
-article.single > section.type-meta > .nav > .next {
+article.single > section.meta > .nav > .next {
     text-align: right;
 }
 
-article.single > section.type-toc {
-}
-article.single > section.type-content {
-}
-
-
-// Hugo's TOC
-#TableOfContents:before {
-	content: "Contents";
-
+// Table of Contents
+article.single > section.toc > * {
 	font-family: FontDisplayPrimary;
-	font-size: var(--font-h2-size);
-	font-weight: 600;
+	font-size: var(--font-h3-size);
+	font-weight: 500;
 	color: var(--clr-black);
+}
+article.single > section.toc {
+// Table of Contents
+}
+#TableOfContents:before {
+	content: "Table of Contents";
+	font-weight: 700;
 
-	margin-bottom: 1rem;
+	margin-bottom: var(--spacing-s);
 }
 #TableOfContents {
 	display: flex;
 	flex-direction: column;
 	justify-content: left;
 
+    counter-reset: section;
+
 	margin-bottom: var(--spacing-s);
 }
 #TableOfContents ul {
-	list-style-type: disc;
+	list-style: none;
+
+    margin: 0;
+    padding: 0;
+
+    padding-left: 1em;
 }
-#TableOfContents ul li {
-	font-family: FontDisplayPrimary;
+#TableOfContents li {
+    margin-bottom: var(--spacing-s);
+}
+#TableOfContents li::before {
 }
 
-// Consistent section margins
+article.single > section.content {
+// The Primary Content Section
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+
+// Consistent section margin-bottom
 article.single > section {
-    margin: 0 0 var(--spacing-m) 0;
+    margin-bottom: var(--spacing-m);
 }

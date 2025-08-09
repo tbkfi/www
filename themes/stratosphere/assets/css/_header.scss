@@ -15,6 +15,7 @@ header > nav {
     padding-bottom: var(--spacing-m);
 }
 header > nav > ul {
+// Current site path
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -29,8 +30,10 @@ header > nav > ul {
     
 }
 header > nav > ul > li {
+// Path component
     margin-left: 0.75rem;
     font-size: var(--font-h1-size);
+    font-weight: 600;
 }
 header > nav > ul > li > a {
 	color: transparent; /* don't obscure parent styling! */

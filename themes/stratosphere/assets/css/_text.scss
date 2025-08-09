@@ -11,11 +11,11 @@ h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
 }
 h1 {
 	font-size: var(--font-h1-size);
-	font-weight: 700;
+	font-weight: 800;
 }
 h2 {
 	font-size: var(--font-h2-size);
-	font-weight: 600;
+	font-weight: 700;
 }
 h3 {
 	font-size: var(--font-h3-size);
@@ -37,7 +37,7 @@ p {
 	color: var(--clr-black);
 	font-family: FontDisplayPrimary, display, sans-serif;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: var(--font-p-lineheight);
 	margin-bottom: var(--spacing-m);
 	font-size: var(--font-p-size);
@@ -165,12 +165,12 @@ a.txt-glow-warm:hover {
 }
 @media (prefers-reduced-motion: no-preference) {
 	.txt-glow-warm {
-	animation: move-bg 20s linear infinite;
+	    animation: move-bg 20s linear infinite;
 	}
 	@keyframes move-bg {
-	to {
-		background-position: 400% 0;
-	}
+        to {
+            background-position: 400% 0;
+        }
 	}
 }
 

@@ -1,27 +1,60 @@
+// Tags: Reset
+article > section.meta > ul.tags * {
+	margin: 0;
+	padding: 0;
+
+	list-style-type: none;
+
+	line-height: 0;
+	text-indent: 0;
+}
+
+// Tags: Layout
+article > section.meta > ul.tags {
+	display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+	justify-content: center;
+
+    max-width: 75%;
+
+    margin: 0 auto;
+}
+
+// Tags: Box
+article > section.meta > ul.tags > li.tag {
+	background-color: var(--clr-white);
+
+	border-radius: var(--spacing-s);
+    border: var(--spacing-s) var(--clr-black) solid;
+
+	margin: 0.25rem;
+    padding: var(--spacing-s);
+}
+
+// Tags: Text
+article > section.meta > ul.tags > li.tag > a {
+    display: block;
+
+	font-family: FontDisplayPrimary;
+    font-size: var(--font-h5-size);
+    font-weight: 800;
+	color: var(--clr-black);
+    
+    padding: calc(var(--spacing-s)*3);
+}
+article > section.meta > ul.tags > li.tag > a:hover {
+    color: var(--clr-accent-red);
+}
+
+
+
+
 // General strings
 .date {
 	font-family: FontDisplayPrimary;
 }
 
-// Tag lists
-.tags li {
-	list-style-type: none;
-	height: auto;
-	width: auto;
-}
-.tag {
-	font-family: FontDisplayPrimary;
-	font-size: var(--font-p-size);
-    font-weight: 800;
-	color: var(--clr-black);
-
-	background-color: none;
-	border: solid black calc( 1.00 * var(--spacing-s));
-	border-radius: var(--spacing-s);
-
-    margin: 0;
-	padding: var(--spacing-m);
-}
 .listTags {
 	margin: 0 auto;
 	max-width: 75%;
@@ -36,19 +69,17 @@
 	margin: 0rem 0 1rem 0;
 }
 
-
+// Article Types
 article.type-404 * {
 	font-family: FontDisplayPrimary;
 	text-align: center;
 }
 
-
-/* CATEGORY PREVIEW */
-.contentPreview {
-	width: 100%;
+article.type-list-big {
+	width: auto;
 	height: auto;
 }
-.contentPreview .header {
+article.type-list-big > a {
 	user-select: none;
 	display: inline-block; /* Make this <a> behave like a typical block element so its bg gets filled.*/
 	width: calc(100% - 2rem);
@@ -60,23 +91,24 @@ article.type-404 * {
 	background-color: var(--clr-accent-blue);
 	transition: background-color 0.6s ease;
 }
-.contentPreview .header * {
+article.type-list-big > a * {
 	color: var(--clr-white);
 	margin: 0;
 }
-.contentPreview .header:hover {
-	background-color: black;
-	transition: background-color 0.3s ease;
+article.type-list-big > a:hover {
+	background-color: var(--clr-black);
+	transition: background-color 0.2s ease;
 }
-.previewEntry {
+article.type-list > section.entry {
 	display: flex;
 	flex-direction: column;
 }
-.previewEntry > div { /* formatting-only div! */
+article.type-list > section.entry > div {
 	margin: var(--spacing-m);
 	padding: 0 0 0 var(--spacing-m);
 	/*border-left: 0.20rem solid black;*/
 }
+
 .previewEntry .meta {
 	display: flex;
 	flex-direction: column;
@@ -107,12 +139,12 @@ article.type-404 * {
 	color: var(--clr-grey);
 }
 .previewPost {
-    // This whole mess has to go
-    max-width: 64rem;
+	// This whole mess has to go
+	max-width: 64rem;
 }
 .previewNote {
-    // This whole mess has to go
-    max-width: 64rem;
+	// This whole mess has to go
+	max-width: 64rem;
 }
 .previewPost .header {
 	background-color: var(--clr-accent-blue);
@@ -129,15 +161,10 @@ article.type-404 * {
 	border-left: 0.20em solid var(--clr-accent-red);
 }
 
-/* LIST PAGE */
-.contentList * {
-	list-style-type: none;
-}
-.contentList h1 {
-	font-family: FontDisplayPrimary;
-	text-align: center;
-}
-.contentItem * {
-	padding: 0;
-	margin: 0;
+img {
+	display: block;
+	margin: auto;
+	width: 75%;
+	/*max-width: 40%;*/
+	height: auto;
 }
