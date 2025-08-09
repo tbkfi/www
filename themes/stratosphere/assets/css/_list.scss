@@ -1,7 +1,8 @@
-// Section: Title
-article.list > section.meta > .title {
+// Section: Meta 
+article.list > section.meta * {
 	font-family: FontDisplayPrimary;
 	text-align: center;
+    padding: 0;
 }
 
 // Section: Content
