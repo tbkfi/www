@@ -1,35 +1,70 @@
+// Section: Title
 article.list > section.meta > .title {
 	font-family: FontDisplayPrimary;
 	text-align: center;
 }
 
+// Section: Content
 article.list > section.content {
-    margin: var(--spacing-l);
+    margin: var(--spacing-m);
     padding: 0;
 }
 
-article.list > section.content > .entries * {
+
+// Entries: Reset
+article.list > section.content > ul.entries {
+    margin: 0;
+    padding: 0;
+}
+article.list > section.content > ul.entries * {
+    font-family: FontDisplayPrimary;
+    font-size: var(--font-p-size);
+
     margin: 0;
     padding: 0;
 
     list-style: none;
 }
-
-article.list > section.content > .entries > li {
-    margin-bottom: 0.75rem;
-}
-article.list > section.content > .entries >  > a > .meta {
-	font-family: FontDisplayPrimary;
-    font-size: var(--font-p-size);
-    color: black;
-
+// Entries: Box
+article.list > section.content > ul.entries > li.entry {
+    background-color: var(--clr-black);
 	border-radius: var(--spacing-s);
-    border: var(--spacing-s) var(--clr-black) solid;
+
+    width: auto;
+    height: auto;
+
+    margin-bottom: calc(var(--spacing-m)*0.50);
+    padding: calc(var(--spacing-m)*0.20);
 }
-article.list > section.content > .entries > li > a > .title {
-    font-family: FontMonospace;
-    font-size: var(--font-p-size);
+// Entries: Anchor
+article.list > section.content > ul.entries > li.entry > a {
+}
+article.list > section.content > ul.entries > li.entry > a:hover {
 }
 
-article.list > section.content > .entries > li > a:hover {
+// Entry: Section (defaults)
+article.list > section.content > ul.entries > li.entry > a > .meta > .section {
+    font-family: FontDisplayPrimary;
+    font-size: var(--font-p-size);
+    font-weight: 800;
+
+    color: var(--clr-white);
+}
+// Entry: Date
+article.list > section.content > ul.entries > li.entry > a > .meta > .date {
+    font-weight: 800;
+	border-radius: var(--spacing-s);
+}
+// Entry: Title
+article.list > section.content > ul.entries > li.entry > a > .meta > .title {
+    font-weight: 500;
+}
+
+
+// Section-specific entry tag
+article.list > section.content > ul.entries > li.entry > a > .meta > .post {
+}
+article.list > section.content > ul.entries > li.entry > a > .meta > .note {
+}
+article.list > section.content > ul.entries > li.entry > a > .meta > .log {
 }
