@@ -5,6 +5,7 @@ $canvas-width-max: 1200px;
 // Colours
 $clr-black: #141414;
 $clr-white: #FAF0E9;
+$clr-white-dark: mix(black, $clr-white, 5%);
 $clr-grey: #494949;
 
 $clr-accent-red: #F74E45;
@@ -12,7 +13,7 @@ $clr-accent-green: #164E42;
 $clr-accent-blue: #0F8EF0;
 
 $clr-accent-yellow: #FFDB70;
-$clr-accent-purple: #A67F8E;
+$clr-accent-purple: #8A2AD4;
 
 // Spacing, Radius
 $spacing-s: 0.15rem;
@@ -51,6 +52,7 @@ $font-p-lineheight: 3.25rem;
     // Colours
 	--clr-black: #{$clr-black};
 	--clr-white: #{$clr-white};
+    --clr-white-dark: #{$clr-white-dark};
 	--clr-grey: #{$clr-grey};
 	
 	--clr-accent-red: #{$clr-accent-red};

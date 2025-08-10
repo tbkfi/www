@@ -1,8 +1,21 @@
 baseURL = "https://www.tbk.fi/"
 languageCode = "en-us"
-title = 'TBK'
+title = "TBK"
 theme = "stratosphere"
 
 [params]
-    author= "Tuomo Björk"
-    directory_url = "https://dir.tbk.fi/"
+    author = "Tuomo Björk"
+
+    # meta-links
+    url_github  = "https://github.com/tbkfi"
+    url_steam   = "https://steamcommunity.com/id/tbkfi"
+    url_discord = ""
+
+    # meta-status
+    status_directory = "https://dir.tbk.fi/"
+    status_portal    = "https://portal.tbk.fi/"
+
+    # description
+    desc_post = "topic specific content pieces"
+    desc_note = "various insights on projects and media"
+    desc_log  = "media logs"

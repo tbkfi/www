@@ -1,0 +1,34 @@
+{{ $ctx := .context }}
+{{ $section := .section }}
+
+{{ $target := printf "desc_%s" $section }}
+{{ $desc := index $ctx.Site.Params $target }}
+
+<section class="preview-big {{ $section }}">
+	<a class="header {{ $section }}" href="/{{ $section }}/">
+		<h1>{{ title $section | upper }}</h1>
+		<h2>{{ $desc }}</h2>
+	</a>
+	<ul class="entries">
+	{{ range where $ctx.Site.RegularPages "Section" $section }}
+		<li class="entry">
+			<div class="{{ $section }}">
+				<ul class="meta">
+					<li class="date">{{ .Date.Format "2006-01-02" }}</li>
+					<li class="title">{{ .Title }}</li>
+					<li class="tags">
+					{{ range .Params.tags }}
+						<a class="tag" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | upper }}</a>
+					{{ end }}
+					</li>
+					<li class="description">{{ .Summary | truncate 220 }}</li>
+					{{ if .Truncated }}
+						<li class="link"><a href="{{ .Permalink }}">Read more</a></li>
+						<li class="readtime">{{ .ReadingTime }} minute(s)</li>
+					{{ end }}
+				</ul>
+			</div>
+		</li>
+	{{ end }}
+	</ul>
+</section>

@@ -5,12 +5,15 @@
 	{{ partial "header.html" . }}
 	<main>
 		<div id="container">
-			<article>
-				<h1>Restructuring in-progress!</h1>
-				<p>Everything is very much broken, and all content is being re-indexed.</p>
+			<article class="index">
+				<section>
+					<h1>Restructuring in-progress!</h1>
+					<p>Everything is very much broken, and all content is being re-indexed.</p>
+				</section>
+				{{ partial "preview-big.html" (dict "context" . "section" "post") }}
+				{{ partial "preview-big.html" (dict "context" . "section" "note") }}
+				{{ partial "preview-big.html" (dict "context" . "section" "log") }}
 			</article>
-			{{ partial "preview_post_big.html" . }}
-			{{ partial "preview_note_big.html" . }}
 		</div>
 	</main>
 	{{ partial "footer.html" . }}
