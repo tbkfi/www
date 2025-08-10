@@ -8,13 +8,13 @@ theme = "stratosphere"
 
     # meta-links
     url_github  = "https://github.com/tbkfi"
+    url_signal  = "https://signal.me/#eu/bj5Mo-n3PuDyGs9S_dsGcb5L6zQyDFINdvHlEYFKam-UhveaGfRLZ7XDXfqE268I"
     url_steam   = "https://steamcommunity.com/id/tbkfi"
-    url_signal = "https://signal.me/#eu/bj5Mo-n3PuDyGs9S_dsGcb5L6zQyDFINdvHlEYFKam-UhveaGfRLZ7XDXfqE268I"
     url_discord = ""
 
     # meta-status
-    status_directory = "https://dir.tbk.fi/"
-    status_portal    = "https://portal.tbk.fi/"
+    url_directory = "https://dir.tbk.fi/"
+    url_portal    = "https://portal.tbk.fi/"
 
     # description
     desc_post = "topic specific content pieces"

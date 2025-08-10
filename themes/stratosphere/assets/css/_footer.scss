@@ -1,33 +1,7 @@
 // PARTIAL: footer.html
 
-footer {
-    margin: 0;
-    padding-top: var(--spacing-m);
-    padding-bottom: var(--spacing-l);
+footer > section.copyright {
 }
-
-footer > section.meta-links > ul {
-	display: flex;
-	flex-direction: row;
-    flex-wrap: wrap;
-	justify-content: center;
-
-    list-style-type: none;
-}
-
-footer > section.meta-links > ul > li {
-    margin-left: var(--spacing-m);
-    margin-right: var(--spacing-m);
-}
-footer > section.meta-links > ul > li > a > img {
-    max-width: 2em;
-
-    background-color: var(--clr-white);
-    border-radius: var(--radius-m);
-
-    padding: 1rem;
-}
-
 footer > section.copyright > .disclaimer {
 	font-family: FontDisplayPrimary;
 	text-align: center;
@@ -43,13 +17,14 @@ footer > section.copyright > .author {
     font-weight: 600;
 	color: var(--clr-white);
 
-    margin-bottom: var(--spacing-m)
 }
 
-footer > nav {
-    padding-bottom: var(--spacing-l);
+footer > section.link {
+    padding-bottom: var(--spacing-m);
 }
-footer > nav > ul {
+footer > section.link > nav {
+}
+footer > section.link > nav > ul {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -60,7 +35,7 @@ footer > nav > ul {
 	margin: auto;
     padding: 0;
 }
-footer > nav > ul > li {
+footer > section.link > nav > ul > li {
 	list-style-type: none;
 
 	font-family: FontDisplayPrimary;
@@ -70,6 +45,6 @@ footer > nav > ul > li {
     margin: 0;
     padding: 0;
 }
-footer > nav > ul > li > a:hover {
+footer > section.link > nav > ul > li > a:hover {
 	color: transparent; // don't obscure parent styling! */
 }
