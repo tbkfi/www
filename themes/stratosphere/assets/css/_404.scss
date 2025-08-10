@@ -1,0 +1,20 @@
+// PAGE: 404.html
+
+article.not-found * {
+	font-family: FontDisplayPrimary;
+	text-align: center;
+}
+
+article.not-found {
+    margin: var(--spacing-l);
+
+    margin-top: var(--spacing-m);
+    margin-bottom: var(--spacing-m);
+    padding: 0;
+}
+
+article.not-found > h1 {
+}
+
+article.not-found > p {
+}

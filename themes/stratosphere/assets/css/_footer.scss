@@ -1,15 +1,42 @@
-footer > h1 {
-// Copyright Notice
+// PARTIAL: footer.html
+
+footer {
+    margin: 0;
+    padding-top: var(--spacing-m);
+    padding-bottom: var(--spacing-l);
+}
+
+footer > section.meta-links > ul {
+	display: flex;
+	flex-direction: row;
+    flex-wrap: wrap;
+	justify-content: center;
+
+    list-style-type: none;
+}
+
+footer > section.meta-links > ul > li {
+    margin-left: var(--spacing-m);
+    margin-right: var(--spacing-m);
+}
+footer > section.meta-links > ul > li > a > img {
+    max-width: 2em;
+
+    background-color: var(--clr-white);
+    border-radius: var(--radius-m);
+
+    padding: 1rem;
+}
+
+footer > section.copyright > .disclaimer {
 	font-family: FontDisplayPrimary;
 	text-align: center;
     font-size: var(--font-h3-size);
     font-weight: 600;
-	color: var(--clr-white);
 
     margin-bottom: var(--spacing-s)
 }
-footer > h2 {
-// Author
+footer > section.copyright > .author {
 	font-family: FontDisplayPrimary;
 	text-align: center;
     font-size: var(--font-p-size);
@@ -18,15 +45,11 @@ footer > h2 {
 
     margin-bottom: var(--spacing-m)
 }
-footer > h2 > a:hover {
-	color: transparent; // don't obscure parent styling! */
-}
 
 footer > nav {
     padding-bottom: var(--spacing-l);
 }
 footer > nav > ul {
-// Navigation List
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -38,7 +61,6 @@ footer > nav > ul {
     padding: 0;
 }
 footer > nav > ul > li {
-// Navigation Entries
 	list-style-type: none;
 
 	font-family: FontDisplayPrimary;

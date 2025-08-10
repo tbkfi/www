@@ -1,17 +1,16 @@
-// Section: Meta 
+// PAGE: list.html
+
 article.list > section.meta * {
 	font-family: FontDisplayPrimary;
 	text-align: center;
     padding: 0;
 }
 
-// Section: Content
 article.list > section.content {
     margin: var(--spacing-m);
     padding: 0;
 }
 
-// Entries: Reset
 article.list > section.content > ul.entries {
     margin: 0;
     padding: 0;
@@ -44,9 +43,12 @@ article.list > section.content > ul.entries > li > a.entry {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+	transition: box-shadow 0.5s ease;
 }
 article.list > section.content > ul.entries > li > a.entry:hover {
     box-shadow: 0 0 0 var(--spacing-s) var(--clr-accent-red);
+	transition: box-shadow 0.05s ease;
 }
 
 // Entry: Section (defaults)

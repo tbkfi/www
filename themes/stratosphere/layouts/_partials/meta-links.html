@@ -1,2 +1,32 @@
 <section class="meta-links">
+	<ul>
+		{{ with .Site.Params.url_github }}
+		<li class="github">
+			<a href="{{ . }}">
+				<img src="/media/github.svg" alt="GitHub Brand Logo">
+			</a>
+		</li>
+		{{ end }}
+		{{ with .Site.Params.url_signal }}
+		<li class="signal">
+			<a href="{{ . }}">
+				<img src="/media/signal.svg" alt="Signal Messenger Brand Logo">
+			</a>
+		</li>
+		{{ end }}
+		{{ with .Site.Params.url_steam }}
+		<li class="steam">
+			<a href="{{ . }}">
+				<img src="/media/steam.svg" alt="Steam Brand Logo">
+			</a>
+		</li>
+		{{ end }}
+		{{ with .Site.Params.url_discord }}
+		<li class="discord">
+			<a href="{{ . }}">
+				<img src="/media/discord.svg" alt="Discord Brand Logo">
+			</a>
+		</li>
+		{{ end }}
+	</ul>
 </section>
