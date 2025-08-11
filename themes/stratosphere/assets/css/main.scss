@@ -8,15 +8,11 @@
 
 // Text & Elements
 @import "text";
+@import "tags";
 @import "general";
 
-// Layouts & Partials
-@import "list";
-@import "single";
-@import "404";
-
-@import "preview-big";
+// Priority dependencies
+@import "meta-status";
 @import "meta-links";
 
-// Chonk
-@import "font";
+

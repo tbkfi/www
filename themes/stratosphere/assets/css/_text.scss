@@ -109,16 +109,21 @@ blockquote:before {
 }
 blockquote p {
 	display: inline;
-	font-style: italic;
+
 	font-size: var(--font-h5-size);
+	font-style: italic;
+
 	color: var(--clr-white);
 }
 
 code {
 	font-family: FontMonospace;
-	color: black;
-	background-color: wheat;
-	padding: 0 var(--spacing-s) 0 var(--spacing-s);
+    font-weight: 600;
+	color: var(--clr-black);
+
+	padding: 0 calc(var(--spacing-s)*4);
+
+	background-color: var(--clr-white-dark);
 	border-radius: var(--spacing-s);
 }
 
@@ -148,6 +153,7 @@ hr {
 	margin-top: var(--spacing-l);
 	margin-bottom: var(--spacing-l);
 }
+
 // SFX: Warm Glow
 .txt-glow-warm {
 	background: linear-gradient(

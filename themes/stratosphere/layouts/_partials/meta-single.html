@@ -1,0 +1,17 @@
+<section class="meta-single">
+	<h1 class="title">{{ .Title }}</h1>
+	<h2 class="time">{{ .Date.Format "2006-01-02" }} @ {{ .ReadingTime }} minute(s)</h2>
+	<h3 class="section">
+		<a class="txt-glow-warm" href="{{ .CurrentSection.RelPermalink }}">{{ .CurrentSection.Title | lower }}</a>
+	</h3>
+	<ul class="tags">
+		{{ range .Params.tags }}
+		<li class="tag"><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | upper }}</a></li>
+		{{ end }}
+	</ul>
+	<ul class="nav">
+		<li class="prev"><a href="{{ with .Prev }}{{ .RelPermalink }}{{ end }}">Previous</a></li>
+		<li class="next"><a href="{{ with .Next }}{{ .RelPermalink }}{{ end }}">Next</a></li>
+	</ul>
+	<hr>
+</section>

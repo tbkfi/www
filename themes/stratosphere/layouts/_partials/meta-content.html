@@ -1,0 +1,9 @@
+<section class="meta-content.html">
+	<div class="toc">{{ .TableOfContents }}</div>
+	<div class="header">
+	{{ with .Resources.GetMatch "banner.*" }}
+		<img src="{{ .RelPermalink }}" alt="Content Banner">
+	{{ else }}
+		<img src="{{ "media/page-banner.png" | relURL }}" alt="Content Banner (default)">
+	{{ end }}
+</section>
