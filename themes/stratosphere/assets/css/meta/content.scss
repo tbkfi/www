@@ -1,0 +1,64 @@
+// PARTIAL: meta/content.html
+
+section.meta-content {
+	display: flex;
+	flex-direction: row;
+
+	justify-content: space-between;
+    align-items: top;
+
+    background-color: var(--clr-white-dark);
+
+    margin-bottom: var(--spacing-s);
+    padding: var(--spacing-m);
+}
+
+section.meta-content > nav#TableOfContents * {
+	font-family: FontDisplayPrimary;
+	font-weight: 500;
+}
+section.meta-content > img.header {
+    margin: 0;
+    padding: 0;
+
+    border-radius: var(--radius-s);
+}
+
+// Hugo's TOC
+#TableOfContents:before {
+	content: "Table of Contents";
+    font-size: var(--font-h4-size);
+	font-weight: 700;
+
+	margin-bottom: calc(var(--spacing-s)*8);
+}
+#TableOfContents {
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+
+    counter-reset: section;
+
+	padding-right: var(--spacing-l);
+}
+#TableOfContents ul {
+	list-style: none;
+
+    margin: 0;
+    padding: 0;
+
+    padding-left: 1em;
+}
+#TableOfContents ul li {
+    margin: 0;
+    padding: 0 0 0.25em 0;
+}
+#TableOfContents li::before {
+}
+#TableOfContents li::marker {
+    font-size: 0.75em;
+    color: var(--clr-black);
+}
+#TableOfContents > ul > li > ul {
+    padding: 0.25em 0.5em 0 0.5em;
+}

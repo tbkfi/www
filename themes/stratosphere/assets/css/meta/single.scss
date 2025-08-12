@@ -1,8 +1,8 @@
-// PARTIAL: meta-single.html
+// PARTIAL: meta/single.html
 
 section.meta-single * {
-	font-family: FontDisplayPrimary;
-	text-align: center;	
+    font-family: FontDisplayPrimary;
+    text-align: center;    
 
     margin: 0;
     padding: 0;
@@ -16,17 +16,17 @@ section.meta-single > .title {
 
 section.meta-single > .time {
     font-size: var(--font-h4-size);
-	color: var(--clr-grey);
+    color: var(--clr-grey);
 }
 
 section.meta-single > .section {
     font-size: var(--font-h3-size);
-	color: white;
+    color: white;
 
     margin-bottom: var(--spacing-m);
 }
 section.meta-single > .section > a:hover {
-	color: transparent;
+    color: transparent;
 
     text-decoration: underline;
 }
@@ -35,9 +35,9 @@ section.meta-single > .tags {
 }
 
 section.meta-single > .nav {
-	display: flex;
-	justify-content: space-between;
-	list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
 
     margin: 1rem;
 }

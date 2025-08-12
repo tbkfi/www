@@ -1,9 +1,9 @@
 // Pages
-@import "list";
-@import "single";
-@import "404";
+@import "page/list";
+@import "page/single";
+@import "page/404";
 
 // Components
-@import "meta-single";
-@import "meta-content";
+@import "meta/single";
+@import "meta/content";
 @import "preview-big";

@@ -1,4 +1,4 @@
-// PARTIAL: meta-links.html
+// PARTIAL: meta/links.html
 
 footer > section.meta-links > ul {
 	display: flex;
@@ -18,7 +18,6 @@ footer > section.meta-links > ul {
 footer > section.meta-links > ul > li {
     margin-left: var(--spacing-m);
     margin-right: var(--spacing-m);
-
 }
 footer > section.meta-links > ul > li > a {
     display: block;
@@ -38,4 +37,5 @@ footer > section.meta-links > ul > li > a > img {
     width: 2em;
     max-width: 2em;
 
+    //filter: grayscale(1);
 }

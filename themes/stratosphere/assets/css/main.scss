@@ -12,7 +12,5 @@
 @import "general";
 
 // Priority dependencies
-@import "meta-status";
-@import "meta-links";
-
-
+@import "meta/status";
+@import "meta/links";

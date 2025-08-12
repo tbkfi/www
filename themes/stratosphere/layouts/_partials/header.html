@@ -7,11 +7,16 @@
 			<li>
 				<a class="txt-glow-warm" href="{{ relURL "" }}">{{ $domain | upper }} /</a>
 			</li>
-			<!-- Site Path -->
+			<!-- Section -->
 			{{ if ne .Type "page" }}
 			<li>
-				<!--<a class="txt-glow-warm" href="{{ .Site.BaseURL }}{{ .Section }}/"> {{ .Type | upper }} /</a> -->
-				<a class="txt-glow-warm" href="{{ .Site.BaseURL }}{{ .Section }}/"> {{ .Type | upper }} /</a>
+				<a class="txt-glow-warm" href="{{ .Section | relURL }}"> {{ .Type | upper }} /</a>
+			</li>
+			{{ end }}
+			<!-- Page -->
+			{{ if and (eq .Kind "page") .Section }}
+			<li>
+				<a class="txt-glow-warm" href="{{ .RelPermalink }}">{{ .Title | upper }}</a>
 			</li>
 			{{ end }}
 		</ul>
