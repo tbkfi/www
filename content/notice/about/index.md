@@ -44,4 +44,4 @@ the basic content set and the custom Hugo theme.
 ## Artificial Intelligence
 
 The author of this website does not use AI to write. As writing is communication, it would be rather redundant to
-communicate without communicating... You know?
+write without communicating... You know?
