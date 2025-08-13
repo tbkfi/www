@@ -1,8 +1,4 @@
 <section class="meta-content">
 	{{ .TableOfContents }}
-	{{ with .Resources.GetMatch "banner.*" }}
-		<img class="header" src="{{ .RelPermalink }}" alt="Content Banner">
-	{{ else }}
-		<img class="header" src="{{ "media/page-banner.png" | relURL }}" alt="Content Banner (default)">
-	{{ end }}
+	{{ partial "media-banner.html" . }}
 </section>

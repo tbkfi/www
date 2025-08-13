@@ -9,12 +9,15 @@ header {
 	align-items: flex-end;
 
 	user-select: none;
+
+    padding-top: var(--spacing-m);
+    height: auto;
 }
 header > nav {
     width: 100%;
     height: auto;
 
-    padding-bottom: var(--spacing-m);
+    padding-bottom: calc(var(--spacing-m)*0.75);
 }
 header > nav > ul {
 // Current site path
@@ -29,11 +32,11 @@ header > nav > ul {
 
     padding: 0;
     margin: 0;
-    
 }
 header > nav > ul > li {
 // Path component
     margin-left: 0.75rem;
+    padding-top: calc(var(--spacing-m)*0.5);
     font-size: var(--font-h1-size);
     font-weight: 600;
 }

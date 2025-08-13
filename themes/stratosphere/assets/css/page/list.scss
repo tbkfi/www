@@ -47,7 +47,7 @@ article.list > section.content > ul.entries > li > a.entry {
 	transition: box-shadow 0.5s ease;
 }
 article.list > section.content > ul.entries > li > a.entry:hover {
-    box-shadow: 0 0 0 var(--spacing-s) var(--clr-accent-red);
+    box-shadow: 0 0 0 0.10em var(--clr-accent-red);
 	transition: box-shadow 0.05s ease;
 }
 
@@ -57,7 +57,10 @@ article.list > section.content > ul.entries > li > a.entry > .meta > .section {
     font-size: var(--font-p-size);
     font-weight: 800;
 
-    color: var(--clr-grey);
+    color: var(--clr-white-dark);
+    background-color: var(--clr-accent-yellow);
+
+    padding: 1rem;
 }
 // Entry: Date
 article.list > section.content > ul.entries > li > a.entry > .meta > .date {
@@ -75,12 +78,16 @@ article.list > section.content > ul.entries > li > a.entry > .meta > .title {
 
 
 // Section-specific entry tag
+article.list > section.content > ul.entries > li > a.entry > .meta > .notice {
+    color: var(--clr-black);
+    background-color: var(--clr-accent-yellow);
+}
 article.list > section.content > ul.entries > li > a.entry > .meta > .post {
-    color: var(--clr-accent-blue);
+    background-color: var(--clr-accent-blue);
 }
 article.list > section.content > ul.entries > li > a.entry > .meta > .note {
-    color: var(--clr-accent-red);
+    background-color: var(--clr-accent-red);
 }
 article.list > section.content > ul.entries > li > a.entry > .meta > .log {
-    color: var(--clr-accent-purple);
+    background-color: var(--clr-accent-purple);
 }

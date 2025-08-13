@@ -1,14 +1,12 @@
 // PARTIAL: page/single.scss
 
 article.single {
-    padding-left: var(--spacing-s);
-    padding-right: var(--spacing-s);
 }
 article.single > hr {
+    color: var(--clr-black);
+
     margin-top: var(--spacing-m);
     margin-bottom: var(--spacing-m);
-
-    color: var(--clr-black);
 }
 article.single > section.content {
     padding: var(--spacing-m);

@@ -1,0 +1,32 @@
+{{ with .Resources.GetMatch "banner.*" }}
+{{ $banner := . }}
+
+<!-- 1500x750 (2:1) -->
+{{ $banner_webp := $banner.Resize "1500x webp q75" }}
+{{ $banner_jpg := $banner.Resize "1500x jpeg q75" }}
+
+<picture>
+	<source srcset="{{ $banner_webp.RelPermalink }}" type="image/webp">
+	<source srcset="{{ $banner_jpg.RelPermalink }}" type="image/avif">
+	<img
+		class="header"
+		alt="{{ $.Params.banner_c }}"
+		width="{{ $banner_jpg.Width }}"
+		height="{{ $banner_jpg.Height }}"
+		loading="eager"
+		decoding="async"
+	>
+</picture>
+{{ else }}
+<picture>
+	<img
+		class="header"
+		src="{{ "media/page-banner.png" | relURL }}"
+		alt="Content Banner (default)"
+		width="2000"
+		height="1000"
+		loading="eager"
+		decoding="async"
+	>
+</picture>
+{{ end }}
