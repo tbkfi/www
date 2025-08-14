@@ -59,12 +59,12 @@ section.meta-content > nav#TableOfContents {
 section.meta-content > nav {
     width: 40%;
 }
-section.meta-content > picture {
+section.meta-content > figure {
     width: 60%;
 }
-section.meta-content > picture > img.header {
+section.meta-content > figure > picture > img.header {
     width: 100%;
-    height: 100%;
+    height: auto;
 
     margin: 0;
     padding: 0;
@@ -72,4 +72,12 @@ section.meta-content > picture > img.header {
     aspect-ratio: 2 / 1;
     object-fit: cover;
     border-radius: var(--radius-s);
+}
+section.meta-content > figure > figcaption {
+    font-family: FontDisplayPrimary;
+    font-size: var(--font-h4-size);
+    font-weight: 300;
+    color: var(--clr-grey);
+
+    margin-top: 0.50em;
 }
