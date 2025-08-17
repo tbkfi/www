@@ -1,0 +1,10 @@
+<!-- Site-wide tagcloud -->
+
+<section class="meta">
+	<h1 class="title txt-glow-warm" >{{ .Title | upper }}</h1>
+	<ul class="tags">
+		{{ range .Site.Taxonomies.tags }}
+		<li class="tag"><a href="{{ .Page.Permalink }}">{{ .Page.Title | upper }}</a></li>
+		{{ end }}
+	</ul>
+</section>

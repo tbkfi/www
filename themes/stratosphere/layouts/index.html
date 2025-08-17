@@ -6,11 +6,8 @@
 	<main>
 		<div id="container">
 			<article class="index">
-				<section>
-					<h1>Restructuring in-progress!</h1>
-					<p>Everything is very much broken, and all content is being re-indexed.</p>
 				</section>
-				{{ partial "meta-status.html" . }}
+				<!-- {{ partial "meta-status.html" . }} -->
 				{{ partial "preview-big.html" (dict "context" . "section" "post") }}
 				{{ partial "preview-big.html" (dict "context" . "section" "note") }}
 				{{ partial "preview-big.html" (dict "context" . "section" "log") }}

@@ -1,34 +1,43 @@
+<!-- Full-size page-preview list -->
+
 {{ $ctx := .context }}
 {{ $section := .section }}
 
 {{ $target := printf "desc_%s" $section }}
 {{ $desc := index $ctx.Site.Params $target }}
 
+{{ $num_preview := 5 }}
+
 <section class="preview-big {{ $section }}">
-	<a class="header {{ $section }}" href="/{{ $section }}/">
-		<h1>{{ title $section | upper }}</h1>
-		<h2>{{ $desc }}</h2>
+	<a class="header" href="/{{ $section }}/">
+		<h1 class="title">{{ title $section | upper }}</h1>
+		<h2 class="description">{{ $desc }}</h2>
 	</a>
 	<ul class="entries">
-	{{ range where $ctx.Site.RegularPages "Section" $section }}
-		<li class="entry">
-			<div class="{{ $section }}">
+	{{ range first $num_preview (where $ctx.Site.RegularPages "Section" $section) }}
+		<li class="entry {{ $section }}">
+			<div class="header">
 				<ul class="meta">
-					<li class="date">{{ .Date.Format "2006-01-02" }}</li>
-					<li class="title">{{ .Title }}</li>
-					<li class="tags">
-					{{ range .Params.tags }}
-						<a class="tag" href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | upper }}</a>
-					{{ end }}
+					<li class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+					<li class="date">
+						{{ .Date.Format "2006-01-02" }} @ 
+						<a class="section {{ $section }}" href="/{{ $section }}/">{{ $section | upper }}</a>
 					</li>
-					<li class="description">{{ .Summary | truncate 220 }}</li>
-					{{ if .Truncated }}
-						<li class="link"><a href="{{ .Permalink }}">Read more</a></li>
-						<li class="readtime">{{ .ReadingTime }} minute(s)</li>
-					{{ end }}
+					<li class="taxonomy">
+						{{ partial "tags.html" . }}
+					</li>
 				</ul>
+				<a class="banner" href="{{ .Permalink }}">
+					{{ partial "media-banner.html" . }}
+				</a>
 			</div>
+			<hr>
+			<ul>
+				<li class="description">{{ .Summary | truncate 220 }}</li>
+				<li class="link"><a href="{{ .Permalink }}">Continue reading ...</a></li>
+			</ul>
 		</li>
 	{{ end }}
 	</ul>
+	<a class="end {{ $section }}" href="/{{ $section }}/">MORE {{ $section | upper }}S</a>
 </section>

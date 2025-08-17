@@ -1,0 +1,9 @@
+<!-- Page-specific tags list -->
+
+<ul class="tags">
+{{ range .Params.tags }}
+	<li class="tag">
+		<a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . | upper }}</a>
+	</li>
+{{ end }}
+</ul>

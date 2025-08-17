@@ -2,6 +2,11 @@
 
 article.single {
 }
+
+article.single > section.meta-single > ul.tags {
+    justify-content: center;
+}
+
 article.single > hr {
     color: var(--clr-black);
 
