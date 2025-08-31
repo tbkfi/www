@@ -16,3 +16,9 @@ article.single > hr {
 article.single > section.content {
     padding: var(--spacing-m);
 }
+
+article.single > section.content > * > img {
+    image-rendering: auto;
+    width: 100%;
+    height: auto;
+}
