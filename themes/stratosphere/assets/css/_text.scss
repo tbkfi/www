@@ -5,7 +5,9 @@ h1,h2,h3,h4,h5,h6 {
 	font-family: FontSerif, serif;
 	font-style: normal;
 	line-height: normal;
-	margin-bottom: var(--font-margin);
+
+	margin-top: var(--spacing-s);
+	margin-bottom: var(--spacing-m);
 }
 h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
 	font-family: FontSerifItalic, serif;
@@ -43,17 +45,20 @@ p {
 	line-height: var(--font-p-lineheight);
 	margin-bottom: var(--spacing-m);
 	font-size: var(--font-p-size);
+    text-align: justify;
+    text-justify: inter-word;
 }
 strong {
     font-style: bold;
-	font-weight: 800;
+	font-weight: 700;
 }
 em {
 	font-style: italic;
-    font-weight: 600;
+    font-weight: 350;
 }
 a {
 	text-decoration: none;
+    font-size: var(--font-a-size);
 	color: var(--clr-accent-blue);
 }
 a:hover {
@@ -152,8 +157,8 @@ td {
 }
 hr {
 	color: var(--clr-grey);
-	margin-top: var(--spacing-l);
-	margin-bottom: var(--spacing-l);
+	margin-top: var(--spacing-m);
+	margin-bottom: var(--spacing-m);
 }
 
 // SFX: Warm Glow

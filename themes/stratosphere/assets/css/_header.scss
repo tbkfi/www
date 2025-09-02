@@ -10,14 +10,14 @@ header {
 
 	user-select: none;
 
-    padding-top: var(--spacing-m);
+    padding-top: var(--spacing-l);
     height: auto;
 }
 header > nav {
     width: 100%;
     height: auto;
 
-    padding-bottom: calc(var(--spacing-m)*0.75);
+    padding-bottom: calc(var(--spacing-m)*0.5);
 }
 header > nav > ul {
 // Current site path
@@ -36,11 +36,11 @@ header > nav > ul {
 header > nav > ul > li {
 // Path component
     margin-left: 0.75rem;
-    padding-top: calc(var(--spacing-m)*0.5);
-    font-size: var(--font-h1-size);
-    font-weight: 600;
+    padding-top: var(--spacing-s);
 }
 header > nav > ul > li > a {
+    font-size: var(--font-h1-size);
+    font-weight: 650;
 	color: transparent; /* don't obscure parent styling! */
 }
 header > nav > ul > li > a:hover {

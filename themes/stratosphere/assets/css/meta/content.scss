@@ -8,11 +8,9 @@ section.meta-content {
     align-items: top;
 
     background-color: var(--clr-white-dark);
-
-    margin-bottom: var(--spacing-s);
-    padding: var(--spacing-m);
-
     border-radius: var(--radius-m);
+
+    padding: var(--spacing-m);
 }
 
 section.meta-content > nav#TableOfContents {
@@ -24,7 +22,7 @@ section.meta-content > nav#TableOfContents {
     font-size: var(--font-h4-size);
 	font-weight: 700;
 
-	margin-bottom: calc(var(--spacing-s)*8);
+	margin-bottom: var(--spacing-m);
 }
 #TableOfContents {
 	display: flex;
@@ -75,9 +73,9 @@ section.meta-content > figure > picture > img.header {
 }
 section.meta-content > figure > figcaption {
     font-family: FontDisplayPrimary;
-    font-size: var(--font-h4-size);
+    font-size: var(--font-h6-size);
     font-weight: 300;
     color: var(--clr-grey);
 
-    margin-top: 0.50em;
+    margin-top: var(--spacing-s);
 }

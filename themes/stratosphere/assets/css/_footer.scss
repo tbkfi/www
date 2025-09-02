@@ -6,44 +6,43 @@ footer > section.copyright > .disclaimer {
 	font-family: FontDisplayPrimary;
 	text-align: center;
     font-size: var(--font-h3-size);
-    font-weight: 600;
+    font-weight: 700;
 
-    margin-bottom: var(--spacing-s)
+    margin: 0;
 }
 footer > section.copyright > .author {
 	font-family: FontDisplayPrimary;
-	text-align: center;
-    font-size: var(--font-p-size);
+    font-size: var(--font-h4-size);
     font-weight: 600;
+
 	color: var(--clr-white);
 
+	text-align: center;
+    margin: var(--spacing-s);
 }
 
 footer > section.link {
-    padding-bottom: var(--spacing-m);
+    margin: var(--spacing-m);
 }
 footer > section.link > nav {
+    width: 100%;
+    margin: 0 auto;
 }
 footer > section.link > nav > ul {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-evenly;
 
-	width: 50%;
-    height: 100%;
-
-	margin: auto;
+	margin: 0;
     padding: 0;
 }
 footer > section.link > nav > ul > li {
 	list-style-type: none;
-
+}
+footer > section.link > nav > ul > li > a {
 	font-family: FontDisplayPrimary;
     font-size: var(--font-h3-size);
     font-weight: 600;
-
-    margin: 0;
-    padding: 0;
 }
 footer > section.link > nav > ul > li > a:hover {
 	color: transparent; // don't obscure parent styling! */

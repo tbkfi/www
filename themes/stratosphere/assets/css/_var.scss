@@ -1,8 +1,8 @@
-// Canvas
-$canvas-width-min: 350px;
-$canvas-width-max: 1200px;
+/* Canvas */
+$canvas-width-min: 500px;
+$canvas-width-max: 1000px;
 
-// Colours
+/* Colours */
 $clr-black: #141414;
 $clr-white: #FAF0E9;
 $clr-white-dark: mix(black, $clr-white, 5%);
@@ -15,44 +15,101 @@ $clr-accent-blue: #0F8EF0;
 $clr-accent-yellow: #FFDB70;
 $clr-accent-purple: #8A2AD4;
 
-// Spacing, Radius
-$spacing-s: 0.15rem;
-$spacing-m: 2.50rem;
-$spacing-l: 4.00rem;
+/* Spacing and Adjustments */
+$spacing-std: 0.50rem;
 
-$radius-s: 0.25em;
-$radius-m: 0.75em;
-$radius-l: 1.25em;
+$spacing-mult-s:  1.50;
+$spacing-mult-m:  4.00;
+$spacing-mult-l:  8.00;
+$spacing-mult-xl: 12.00;
+
+$spacing-s: $spacing-std * $spacing-mult-s;
+$spacing-m: $spacing-std * $spacing-mult-m;
+$spacing-l: $spacing-std * $spacing-mult-l;
+$spacing-xl: $spacing-std * $spacing-mult-xl;
+
+// Radius
+$radius-std: 0.10em;
+
+$radius-mult-s: 2.00;
+$radius-mult-m: 4.00;
+$radius-mult-l: 8.00;
+
+$radius-s: $radius-std * $radius-mult-s;
+$radius-m: $radius-std * $radius-mult-m;
+$radius-l: $radius-std * $radius-mult-l;
 
 // Header & Footer
-$header-height: 12rem;
+$header-height: clamp(6rem, 8vw, 12rem);
+$footer-height: clamp(6rem, 8vw, 12rem);
 
-$footer-height: 12rem;
-$footer-height-max: 18rem;
+/* TEXT */
+// Bounds & Multipliers
+$font-std-upper: 1.75rem;
+$font-std-lower: 0.75rem;
 
-// Text
-$font-margin: 1.250rem;
-$font-h1-size: 3.00rem;
-$font-h2-size: 2.50rem;
-$font-h3-size: 2.00rem;
-$font-h4-size: 1.50rem;
-$font-h5-size: 1.00rem;
-$font-h6-size: 0.50rem;
-$font-p-size: 1.75rem;
+$font-mult-h1: 2.00;
+$font-mult-h2: 1.85;
+$font-mult-h3: 1.75;
+$font-mult-h4: 1.50;
+$font-mult-h5: 1.30;
+$font-mult-h6: 1.20;
+$font-mult-p:  1.15;
 
-$font-p-lineheight: 3.25rem;
+$font-p-lineheight: 1.50;
+$font-margin: 1em;
+
+// Calculated values
+$font-h1-size: clamp(
+    $font-std-lower*$font-mult-h1,
+    calc(#{$font-std-lower*$font-mult-h1} + 0.5vw),
+    $font-std-upper*$font-mult-h1
+);
+$font-h2-size: clamp(
+    $font-std-lower*$font-mult-h2,
+    calc(#{$font-std-lower*$font-mult-h2} + 0.5vw),
+    $font-std-upper*$font-mult-h2
+);
+$font-h3-size: clamp(
+    $font-std-lower*$font-mult-h3,
+    calc(#{$font-std-lower*$font-mult-h3} + 0.5vw),
+    $font-std-upper*$font-mult-h3
+);
+$font-h4-size: clamp(
+    $font-std-lower*$font-mult-h4,
+    calc(#{$font-std-lower*$font-mult-h4} + 0.5vw),
+    $font-std-upper*$font-mult-h4
+);
+$font-h5-size: clamp(
+    $font-std-lower*$font-mult-h5,
+    calc(#{$font-std-lower*$font-mult-h5} + 0.5vw),
+    $font-std-upper*$font-mult-h5
+);
+$font-h6-size: clamp(
+    $font-std-lower*$font-mult-h6,
+    calc(#{$font-std-lower*$font-mult-h6} + 0.5vw),
+    $font-std-upper*$font-mult-h6
+);
+$font-p-size: clamp(
+    $font-std-lower*$font-mult-p,
+    calc(#{$font-std-lower*$font-mult-p} + 0.5vw),
+    $font-std-upper*$font-mult-p
+);
 
 
-// NON-SCSS VARS (legacy)
+
+
+
+// NON-SCSS VARS
 :root {
-    // Canvas
-    --canvas-width-min: #{$canvas-width-min};
-    --canvas-width-max: #{$canvas-width-max};
+	// Canvas
+	--canvas-width-min: #{$canvas-width-min};
+	--canvas-width-max: #{$canvas-width-max};
 
-    // Colours
+	// Colours
 	--clr-black: #{$clr-black};
 	--clr-white: #{$clr-white};
-    --clr-white-dark: #{$clr-white-dark};
+	--clr-white-dark: #{$clr-white-dark};
 	--clr-grey: #{$clr-grey};
 	
 	--clr-accent-red: #{$clr-accent-red};
@@ -62,76 +119,31 @@ $font-p-lineheight: 3.25rem;
 	--clr-accent-yellow: #{$clr-accent-yellow};
 	--clr-accent-purple: #{$clr-accent-purple};
 	
-    // Spacing, Radius
+	// Spacing, Radius
 	--spacing-s: #{$spacing-s};
 	--spacing-m: #{$spacing-m};
 	--spacing-l: #{$spacing-l};
+	--spacing-xl: #{$spacing-xl};
 
-    --radius-s: #{$radius-s};
-    --radius-m: #{$radius-m};
-    --radius-l: #{$radius-l};
+	--radius-s: #{$radius-s};
+	--radius-m: #{$radius-m};
+	--radius-l: #{$radius-l};
 	
-    // Header & Footer
+	// Header & Footer
 	--header-height: #{$header-height};
-
 	--footer-height: #{$footer-height};
-    --footer-height-max: #{$footer-height-max};
 
-    // Text
-	--font-margin: #{$font-margin};
+	// Text
+	--font-p-size: #{$font-p-size};
+
+    --font-a-size: #{$font-p-size};
 	--font-h1-size: #{$font-h1-size};
 	--font-h2-size: #{$font-h2-size};
 	--font-h3-size: #{$font-h3-size};
 	--font-h4-size: #{$font-h4-size};
 	--font-h5-size: #{$font-h5-size};
 	--font-h6-size: #{$font-h5-size};
-	--font-p-size: #{$font-p-size};
-    --font-p-lineheight: #{$font-p-lineheight};
-}
 
-@media (max-width: 1000px) {
-	:root {
-		// -40% relative to default
-		--spacing-s: #{($spacing-s * 0.60)};
-		--spacing-m: #{($spacing-m * 0.60)};
-		--spacing-l: #{($spacing-l * 0.60)};
-		
-		// -25% relative to default
-		--header-height: #{($header-height * 0.75)};
-		--footer-height: #{($footer-height * 0.75)};
-
-		// -40% relative to default
-		--font-margin: #{($font-margin * 0.60)};
-		--font-h1-size: #{($font-h1-size * 0.60)};
-		--font-h2-size: #{($font-h2-size * 0.60)};
-		--font-h3-size: #{($font-h3-size * 0.60)};
-		--font-h4-size: #{($font-h4-size * 0.60)};
-		--font-h5-size: #{($font-h5-size * 0.60)};
-		--font-h6-size: #{($font-h6-size * 0.60)};
-		--font-p-size: #{($font-p-size * 0.60)};
-		--font-p-lineheight: #{($font-p-lineheight * 0.60)};
-	}
-}
-@media (max-width: 650px) {
-	:root {
-		// -60% relative to default
-		--spacing-s: #{($spacing-s * 0.40)};
-		--spacing-m: #{($spacing-m * 0.40)};
-		--spacing-l: #{($spacing-l * 0.40)};
-		
-		// -50% relative to default
-		--header-height: #{($header-height * 0.50)};
-		--footer-height: #{($footer-height * 0.50)};
-		
-		// -60% relative to default
-		--font-margin: #{($font-margin * 0.40)};
-		--font-h1-size: #{($font-h1-size * 0.40)};
-		--font-h2-size: #{($font-h2-size * 0.40)};
-		--font-h3-size: #{($font-h3-size * 0.40)};
-		--font-h4-size: #{($font-h4-size * 0.40)};
-		--font-h5-size: #{($font-h5-size * 0.40)};
-		--font-h6-size: #{($font-h6-size * 0.40)};
-		--font-p-size: #{($font-p-size * 0.40)};
-		--font-p-lineheight: #{($font-p-lineheight * 0.40)};
-	}
+	--font-p-lineheight: #{$font-p-lineheight};
+	--font-margin: #{$font-margin};
 }

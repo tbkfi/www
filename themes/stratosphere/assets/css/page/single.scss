@@ -5,6 +5,7 @@ article.single {
 
 article.single > section.meta-single > ul.tags {
     justify-content: center;
+    max-width: 75%;
 }
 
 article.single > hr {
@@ -19,6 +20,9 @@ article.single > section.content {
 
 article.single > section.content > * > img {
     image-rendering: auto;
+
     width: 100%;
     height: auto;
+
+    border-radius: var(--radius-m);
 }

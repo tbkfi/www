@@ -7,7 +7,6 @@ ul.tags * {
 	list-style-type: none;
 
 	line-height: 0;
-	text-indent: 0;
 }
 
 ul.tags {
@@ -15,29 +14,28 @@ ul.tags {
 	flex-direction: row;
     flex-wrap: wrap;
 
-    max-width: 75%;
-
     margin: 0 auto;
 }
 ul.tags > li.tag {
-	background-color: var(--clr-white);
-
-	border-radius: var(--spacing-s);
-    border: var(--spacing-s) var(--clr-black) solid;
-
-	margin: 0.25rem;
-    padding: var(--spacing-s);
+	margin: 0.15rem;
 }
 ul.tags > li.tag > a {
     display: block;
 
 	font-family: FontDisplayPrimary;
-    font-size: var(--font-h5-size);
-    font-weight: 800;
+    font-weight: 700;
+    font-size: calc(var(--font-p-size)*0.75);
 	color: var(--clr-black);
     
-    padding: calc(var(--spacing-s)*3);
+	background-color: var(--clr-white);
+
+	border-radius: var(--radius-s);
+    border: 0.15em var(--clr-black) solid;
+
+    padding: var(--spacing-s);
+    overflow: hidden;
 }
 ul.tags > li.tag > a:hover {
     color: var(--clr-accent-red);
+    border: 0.15em var(--clr-accent-red) solid;
 }
