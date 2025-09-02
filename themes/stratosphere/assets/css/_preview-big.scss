@@ -225,3 +225,20 @@ section.preview-big > a.end:hover {
     background-color: var(--clr-black);
 	transition: background-color 0.15s ease;
 }
+
+@media (max-width: 700px) {
+	:root {
+        // Flow banner image above text
+        section.preview-big > .entries > .entry > .header {
+            flex-direction: column;
+        }
+        section.preview-big > .entries > .entry > .header > .meta {
+            order: 2;
+            width: 100%;
+        }
+        section.preview-big > .entries > .entry > .header > .banner {
+            width: 100%;
+            margin-bottom: var(--spacing-s);
+        }
+    }
+}

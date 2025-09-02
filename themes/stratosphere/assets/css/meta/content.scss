@@ -79,3 +79,19 @@ section.meta-content > figure > figcaption {
 
     margin-top: var(--spacing-s);
 }
+
+@media (max-width: 700px) {
+	:root {
+        // Flow banner image above ToC
+        section.meta-content {
+            flex-direction: column;
+        }
+        section.meta-content > nav {
+            order: 2;
+            width: 100%;
+        }
+        section.meta-content > figure {
+            width: 100%;
+        }
+	}
+}
