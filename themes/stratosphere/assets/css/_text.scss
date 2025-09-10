@@ -78,22 +78,24 @@ a:visited {
 }
 
 ul {
-	list-style-type: disc;
-	padding-left: var(--spacing-m);
+	list-style-type: square;
 	margin-bottom: var(--spacing-m);
 }
 
-ul li {
-	margin-top: var(--spacing-s);
+ul > li {
+	//list-style-type: disc;
 	font-size: var(--font-p-size);
+	margin-bottom: var(--spacing-s);
+	margin-left: var(--spacing-m);
 }
+
 ol {
 	list-style-type: decimal;
 	padding-left: var(--spacing-m); /* Indent the list */
-	margin-bottom: var(--spacing-m);
+	margin-top: var(--spacing-m);
 }
 
-ol li {
+ol > li {
 	margin-top: var(--spacing-s);
 	font-size: var(--font-p-size);
 }

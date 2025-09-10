@@ -112,20 +112,6 @@ $font-p-size:  $font-std * $font-mult-p;
 		--spacing-s: #{($spacing-s * 0.80)};
 		--spacing-m: #{($spacing-m * 0.80)};
 		--spacing-l: #{($spacing-l * 0.80)};
-	}
-}
-@media (max-width: 550px) {
-	:root {
-		--spacing-s: #{($spacing-s * 0.60)};
-		--spacing-m: #{($spacing-m * 0.60)};
-		--spacing-l: #{($spacing-l * 0.60)};
-    }
-}
-@media (max-width: 450px) {
-	:root {
-		--spacing-s: #{($spacing-s * 0.40)};
-		--spacing-m: #{($spacing-m * 0.40)};
-		--spacing-l: #{($spacing-l * 0.40)};
 
 		--font-margin: #{($font-margin * 0.80)};
 		--font-h1-size: #{($font-h1-size * 0.80)};
@@ -135,5 +121,37 @@ $font-p-size:  $font-std * $font-mult-p;
 		--font-h5-size: #{($font-h5-size * 0.80)};
 		--font-h6-size: #{($font-h6-size * 0.80)};
 		--font-p-size: #{($font-p-size * 0.80)};
+	}
+}
+@media (max-width: 550px) {
+	:root {
+		--spacing-s: #{($spacing-s * 0.60)};
+		--spacing-m: #{($spacing-m * 0.60)};
+		--spacing-l: #{($spacing-l * 0.60)};
+
+		--font-margin: #{($font-margin * 0.70)};
+		--font-h1-size: #{($font-h1-size * 0.70)};
+		--font-h2-size: #{($font-h2-size * 0.70)};
+		--font-h3-size: #{($font-h3-size * 0.70)};
+		--font-h4-size: #{($font-h4-size * 0.70)};
+		--font-h5-size: #{($font-h5-size * 0.70)};
+		--font-h6-size: #{($font-h6-size * 0.70)};
+		--font-p-size: #{($font-p-size * 0.70)};
+    }
+}
+@media (max-width: 450px) {
+	:root {
+		--spacing-s: #{($spacing-s * 0.40)};
+		--spacing-m: #{($spacing-m * 0.40)};
+		--spacing-l: #{($spacing-l * 0.40)};
+
+		--font-margin: #{($font-margin * 0.60)};
+		--font-h1-size: #{($font-h1-size * 0.60)};
+		--font-h2-size: #{($font-h2-size * 0.60)};
+		--font-h3-size: #{($font-h3-size * 0.60)};
+		--font-h4-size: #{($font-h4-size * 0.60)};
+		--font-h5-size: #{($font-h5-size * 0.60)};
+		--font-h6-size: #{($font-h6-size * 0.60)};
+		--font-p-size: #{($font-p-size * 0.60)};
 	}
 }
