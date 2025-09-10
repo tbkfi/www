@@ -3,16 +3,16 @@
 footer > section.copyright {
 }
 footer > section.copyright > .disclaimer {
-	font-family: FontDisplayPrimary;
+    font-family: FontDisplayPrimary;
 	text-align: center;
-    font-size: var(--font-h3-size);
+    font-size: var(--font-h5-size);
     font-weight: 700;
 
     margin: 0;
 }
 footer > section.copyright > .author {
 	font-family: FontDisplayPrimary;
-    font-size: var(--font-h4-size);
+    font-size: var(--font-h6-size);
     font-weight: 600;
 
 	color: var(--clr-white);
@@ -38,10 +38,12 @@ footer > section.link > nav > ul {
 }
 footer > section.link > nav > ul > li {
 	list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 footer > section.link > nav > ul > li > a {
 	font-family: FontDisplayPrimary;
-    font-size: var(--font-h3-size);
+    font-size: var(--font-h6-size);
     font-weight: 600;
 }
 footer > section.link > nav > ul > li > a:hover {

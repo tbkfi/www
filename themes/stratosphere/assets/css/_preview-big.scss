@@ -37,7 +37,7 @@ section.preview-big > a.header > .title {
 // Section header (description)
 section.preview-big > a.header > .description {
     font-family: FontMonospace;
-    font-size: var(--font-h3-size);
+    font-size: var(--font-h4-size);
     font-weight: 700;
 	color: var(--clr-white);
 }
@@ -95,11 +95,11 @@ section.preview-big > ul.entries > li.entry > div.header > ul.meta {
     overflow: hidden;
 }
 section.preview-big > ul.entries > li.entry > div.header > ul.meta > li.taxonomy {
-    //overflow: auto;
+    overflow: auto;
 }
 section.preview-big > ul.entries > li.entry > div.header > ul.meta > li.title > a {
     font-family: FontDisplayPrimary;
-    font-size: var(--font-h2-size);
+    font-size: var(--font-h3-size);
     font-weight: 600;
 	color: var(--clr-black);
 }
@@ -108,7 +108,7 @@ section.preview-big > ul.entries > li.entry > div.header > ul.meta > li.title > 
 }
 section.preview-big > ul.entries > li.entry > div.header > ul.meta > li.date {
     font-family: FontDisplayPrimary;
-    font-size: var(--font-h4-size);
+    font-size: var(--font-h6-size);
     font-weight: 600;
 	color: var(--clr-grey);
 
@@ -184,7 +184,7 @@ section.preview-big > ul.entries > li.entry > ul > li.description > h2 {
     margin-bottom: var(--spacing-s);
 }
 section.preview-big > ul.entries > li.entry > ul > li.link > a {
-    font-size: var(--font-h5-size);
+    //font-size: var(--font-h6-size);
     font-weight: 500;
 }
 
@@ -226,7 +226,7 @@ section.preview-big > a.end:hover {
 	transition: background-color 0.15s ease;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 850px) {
 	:root {
         // Flow banner image above text
         section.preview-big > .entries > .entry > .header {
