@@ -12,10 +12,10 @@ footer > section.meta-links > ul {
 }
 
 footer > section.meta-links > ul {
-    margin: 0;
-    padding: 0;
+    padding: var(--spacing-s) 0;
 }
 footer > section.meta-links > ul > li {
+    margin: 0;
     margin-left: var(--spacing-m);
     margin-right: var(--spacing-m);
 }
@@ -34,8 +34,6 @@ footer > section.meta-links > ul > li > a:hover {
     box-shadow: 0 0 0 0.20em var(--clr-accent-red);
 }
 footer > section.meta-links > ul > li > a > img {
-    width: 2em;
-    max-width: 2em;
-
+    width: var(--spacing-l);
     //filter: grayscale(1);
 }
