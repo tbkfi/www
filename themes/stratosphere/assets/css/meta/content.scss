@@ -34,7 +34,7 @@ section.meta-content > nav#TableOfContents {
 	margin-right: var(--spacing-m);
 }
 #TableOfContents ul {
-	list-style: disc;
+	list-style: number;
 
     margin: 0;
     padding: 0;
@@ -52,7 +52,8 @@ section.meta-content > nav#TableOfContents {
     color: var(--clr-black);
 }
 #TableOfContents > ul > li > ul {
-    padding: 0.25em 0.5em 0 0.5em;
+	list-style: square;
+    padding: 0.25em 0.5em 0 2em;
 }
 section.meta-content > nav {
     width: 40%;
@@ -73,11 +74,13 @@ section.meta-content > figure > picture > img.header {
 }
 section.meta-content > figure > figcaption {
     font-family: FontDisplayPrimary;
-    font-size: var(--font-h6-size);
+    font-size: var(--font-p-size);
     font-weight: 300;
+    font-style: italic;
     color: var(--clr-grey);
 
     margin-top: var(--spacing-s);
+    margin-bottom: var(--spacing-m);
 }
 
 @media (max-width: 850px) {
