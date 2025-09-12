@@ -161,7 +161,7 @@ There are a lot of antenna options with varying specifications. Importantly I sh
 
 ### Modem
 
-I chose Teltonika's RUTX50 as the best candidate for the following features: OpenWRT, Rugged chassis, SMA connectivity, and GPS. Regrettably it doesn't have eSIM support, but my management plans don't require them anyhow.
+I chose Teltonika's RUTX50 as the best candidate for the following features: OpenWRT, Quectel modem, Rugged chassis, SMA ports (w/o modding), and GPS. Regrettably it doesn't have eSIM support, but my management plans don't require them anyhow.
 
 So what about the price? I didn't want to pay over 400€ for the modem, but the MSRP for RUTX50 is between 500-600€. Ah, well. I happened to snag one very lightly (looks new to me) used for 350€ plus shipping locally. So with that, I didn't blow my budget either and managed to get the device I preferred with excellent external connectivity.
 
@@ -169,4 +169,83 @@ So what about the price? I didn't want to pay over 400€ for the modem, but the
 
 ### Antennae
 
-Undecided.
+#### Omni-directional
+
+Having tested the RUTX50 with its stock 4x4 5G antennas in the city, I was left underwhelmed by the connection quality.
+The throughput was decent, but the signal quality was shaky due to low reception and the uplink had a lot of jitter.
+
+My testing environment was challenging for the small omnis due to where the ISP had their nearest 4G/5G tower and what the
+geography was like. It didn't help that the tower was mostly designed to serve the area exactly the opposite direction of where
+I was and that it was because of that quite short as geography lended itself for it to have good vantage in its primary direction.
+
+![Site to mast in city contour data](city-contour.png)
+
+As can be seen from the contour data, there are quite a few factors that contribute to an attenuated signal from the local topography alone.
+Not only is there effectively a double-wall of earth in between the apartment and the small mast on the other side, the entire span
+is covered in a dense forest of tall trees. That's a concrete physical obstruction, and the trees retain a lot of water which further worsen the outlook.
+And because that isn't enough, I can't actually even face the tower from the apartment. The best I can do is 90 degree offset, so I have to effectively use a side-cone.
+
+Since I wanted the modem to be reliably useful in the city as well, I decided to shop for an omnidirectional antenna;
+and, after a couple days of hunting I came across Panorama Antenna's lineup of 4G/5G omnidirectional antennas.
+
+There were two models I contemplated ([DMM4-6-60](https://panorama-antennas.com/product/dmm4-6-60-4x4-mimo-4g-5g-desk-mount-mimo-antenna-portable-antenna/) and [BAT[X]M4-6-60-[X]](https://panorama-antennas.com/product/batxm4-6-60-x-4x4-mimo-4g-5g-adhesive-mount-antenna/)). Both were relatively small, primarily indoor antennas that could easily fit into a travel case and provided polarised 4x4 with decent coverage of low-band, mid-band, and high-band frequencies. The slightly larger BAT-model also had 2x2 Wifi antennas and a strong GPS antenna (26dBm).
+
+Needless to say, but the BAT-model fit my requirements perfectly as it had not only the 4x4 Cell antennas, but
+also Wifi and GPS all bundled into a small form factor with good peak gain of about 7dBi at n78.
+
+If you don't need the Wifi/GPS antennas, the smaller DMM-4-6-60 can be found for 70-90€ and is probably
+about as good for cell connectivity. Where as the bigger BATGM-4-6-60-D is around 170-200€.
+The variant with 3x3 or 4x4 Wifi antennas I couldn't even find available online.
+
+![Panorama Antennas BATGM-4-6-60-D](omni.jpg)
+
+[BATGM-4-6-60-D Datasheet](https://panorama-antennas.com/wp-content/uploads/2023/09/BATXM4-6-60-X-Datasheet.pdf)
+
+#### Directional
+
+I didn't plan on getting directional antennas after having bought the omni, but I saw a deal
+on a local marketplace for a pair of used [Poynting LPDA-0092](https://poynting.tech/antennas/lpda-92/) for 40€ each, with all the mounting hardware included... I couldn't really pass up on a deal that good.
+
+It's been a while since I played around with directional antennas, so I figured this is a good chance to
+get a pair of good quality ones for a very good price. Besides, these are passive, so they should
+be good virtually forever and may lend themselves to other projects in the future at their supported frequencies.
+
+![Poynting LPDA-0092 Directional Antenna](directional.jpg)
+
+[LPDA-0092 Datasheet](https://drive.google.com/file/d/1pup5J92OWVpsRE8j_v-te_hXMwyzA138/view)
+
+
+## Validation
+
+I'll keep this rather short and outline the most important findings and performance characteristics,
+perhaps somewhat dissapointingly omitting the methodology; but, some of the tools used were: ping, iperf3, mtr, wifiman (ubiquiti), and the tools available on RutOS webui for cellular details and wifi.
+
+Testing was performed on Elisa's 4G/5G network using a prepaid SIM with the 3-day "5G Turbo 600Mbps" plan to
+eliminate bottlenecks of lower bandwith plans, and to guarantee access to the 5G network.
+
+For the modem (RUTX50), I'm very pleased with the cellular performance on both 4G and 5G (NSA). Even with the
+small stock antennas I was able to get 300Mbps downlink and 20Mbps uplink, but the latency had rather large variance (20-100ms)
+and packet loss was more common than with the larger external antenna.
+
+Using the BATGM-4-6-60-D cellular performance was excellent on all accounts, despite the challenging environment.
+Below is the typical connection stats for the previously detailed city environment.
+
+![View of RutOS Mobile Network statistics in the WebUI](cell-stats.jpg)
+
+Next up is the speedtest result ran on a friday afternoon / evening using the previously detailed connection.
+
+![Speedtest.net results for Elisa 5G via RUTX50 using an external Panorama Antennas omni](omni-speedtest-5g.jpg)
+
+This looks very good, and massively overshoots my initial targets. Naturally out in the boonies the low-bands will carry less data, but I know for a fact that the modem is more than capable of reaching my requirements while also performing great in an urban setting.
+
+I did some brief testing with just 2x2 of the cell antennas connected, and it's very clear that having 4x4 greatly improved the connection stability in the city. So definitely aim for a 4x4 modem/antenna combo if expecting to rely on reflections in the environment.
+
+Next up the GPS performance with the external antenna. There's not much else to say on that, other than its performance is, again, excellent. It doesn't matter which corner or closet I stuff the antenna into within the apartment. The modem always locks onto satellites (7-9 on avg.) when connected to the larger external antenna. I would consider this a very robust solution to guarantee accurate network time to machines.
+
+Now for the downer part. The WiFi performance on the RUTX50 is below expectations, and it doesn't appear that there is anything I can do to rectify the issue(s).
+
+Wifi 5 *should* allow me speeds of about 500mbps, but in practice I was able to only get around 400mbps sustained. This is OK, but the bigger problem is the latency and packet loss on the RUTX50. The typical latency introduced by the Wifi hop is 17ms, which is simply dissapointing.
+
+I'm comparing the RUTX50 5GHz performance to my old Unifi AP AC Lite WAP, which is also specced to Wifi 5. The Unifi can easily sustain 500Mbps (saturating the uplink) and holding a stable latency of around 2-4ms. If my modem to backhaul latency is 20ms, there is zero reason for my Wifi to be 17ms. This effectively makes the Wifi on the RUTX50 useless, unless there is a way to optimise the performance.
+
+Now that all is done, I'm quite pleased with the results. I do wish the Wifi was more performant, but I guess you can't have everything (unless you pay 800€ for the RUTC50 with Wifi 6E). This just means I need to provision a separate WAP to go along with the modem for optimal performance.
