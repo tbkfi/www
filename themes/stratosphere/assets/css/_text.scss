@@ -82,11 +82,12 @@ ul {
     max-width: 90%;
     margin: 0 auto;
     
-    list-style-type: square;
+    list-style-type: none; // or square
     list-style-position: inside;
     
     font-size: var(--font-p-size);
     font-weight: 700;
+    font-style: bold;
     line-height: normal;
     
     padding: var(--spacing-m);
