@@ -1,215 +1,237 @@
 // Default TEXT styling
 
 h1,h2,h3,h4,h5,h6 {
-	color: var(--clr-black);
-	font-family: FontSerif, serif;
-	font-style: normal;
-	line-height: normal;
+    color: var(--clr-black);
+    font-family: FontPrimary, sans-serif;
+    font-style: normal;
+    line-height: normal;
 
-	margin-top: var(--spacing-s);
-	margin-bottom: var(--spacing-m);
+    margin-top: var(--spacing-s);
+    margin-bottom: calc(var(--spacing-s)*1.75);
 }
 h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
-	font-family: FontSerifItalic, serif;
-	font-style: italic;
+    font-family: FontPrimaryItalic, sans-serif;
+    font-style: italic;
 }
 h1 {
-	font-size: var(--font-h1-size);
-	font-weight: 800;
+    font-size: var(--font-h1-size);
+    font-weight: 800;
 }
 h2 {
-	font-size: var(--font-h2-size);
-	font-weight: 700;
+    font-size: var(--font-h2-size);
+    font-weight: 700;
 }
 h3 {
-	font-size: var(--font-h3-size);
-	font-weight: 650;
+    font-size: var(--font-h3-size);
+    font-weight: 650;
 }
 h4 {
-	font-size: var(--font-h4-size);
-	font-weight: 600;
+    font-size: var(--font-h4-size);
+    font-weight: 600;
 }
 h5 {
-	font-size: var(--font-h5-size);
-	font-weight: 550;
+    font-size: var(--font-h5-size);
+    font-weight: 550;
 }
 h6 {
-	font-size: var(--font-h6-size);
-	font-weight: 500;
+    font-size: var(--font-h6-size);
+    font-weight: 500;
 }
 p {
-	color: var(--clr-black);
-	font-family: FontDisplayPrimary, display, sans-serif;
-	font-style: normal;
-	font-weight: 500;
-	line-height: var(--font-p-lineheight);
-	margin-bottom: var(--spacing-m);
-	font-size: var(--font-p-size);
+    font-family: FontPrimary, sans-serif;
+    font-style: normal;
+    font-size: var(--font-p-size);
+
+    line-height: var(--font-p-lineheight);
+    margin-bottom: var(--spacing-m);
+
     text-align: justify;
     text-justify: inter-word;
+
+    color: var(--clr-black);
 }
 strong {
     font-style: bold;
-	font-weight: 700;
+    font-weight: 700;
 }
 em {
-	font-style: italic;
+    font-style: italic;
     font-weight: 350;
 }
 a {
-	text-decoration: none;
-	color: var(--clr-accent-blue);
+    text-decoration: none;
+    color: var(--clr-accent-blue);
 }
 a:hover {
-	color: var(--clr-accent-red);
+    color: var(--clr-accent-red);
 }
 a:visited {
-	color: none;
+    color: none;
 }
 
 ::selection {
-	color: var(--clr-black);
-	background: var(--clr-accent-yellow);
+    color: var(--clr-black);
+    background: var(--clr-accent-yellow);
 }
 ::-moz-selection {
-	color: var(--clr-black);
-	background: var(--clr-accent-yellow);
+    color: var(--clr-black);
+    background: var(--clr-accent-yellow);
 }
 
 ul {
-	list-style-type: square;
-	margin-bottom: var(--spacing-m);
+    max-width: 90%;
+    margin: 0 auto;
+    
+    list-style-type: square;
+    list-style-position: inside;
+    
+    font-size: var(--font-p-size);
+    font-weight: 700;
+    line-height: normal;
+    
+    padding: var(--spacing-m);
+    margin-bottom: var(--spacing-m);
+    border-radius: var(--radius-l);
+
+    background-color: var(--clr-white-dark);
 }
 
-ul > li {
-	//list-style-type: disc;
-	font-size: var(--font-p-size);
-	margin-bottom: var(--spacing-s);
-	margin-left: var(--spacing-m);
+ul li::marker { // Affects both <ul> and <li> markers ...
+    font-size: var(--font-h6-size);
+}
+
+ul ul { // This affects the nested lists, including <li> under <ul> ...
+    list-style-type: circle;
+    list-style-position: outside;
+
+    font-size: var(--font-p-size);
+    font-weight: 400;
+
+    margin-bottom: var(--spacing-s);
+    padding: var(--spacing-s) var(--spacing-m);
 }
 
 ol {
-	list-style-type: decimal;
-	padding-left: var(--spacing-m); /* Indent the list */
-	margin-top: var(--spacing-m);
+    list-style-type: decimal;
+    margin-top: var(--spacing-m);
 }
 
 ol > li {
-	margin-top: var(--spacing-s);
-	font-size: var(--font-p-size);
+    margin-top: var(--spacing-s);
+    font-size: var(--font-p-size);
 }
 
 blockquote {
-	font-family: FontSerifItalic;
-	border-left: var(--spacing-m) solid var(--clr-accent-green); /* left accent border */
-	padding: var(--spacing-m);
-	margin: var(--spacing-l) 0 var(--spacing-l) 0;
-	background-color: var(--clr-grey);
-	quotes: "“" "”" "‘" "’";
+    font-family: FontPrimary;
+    border-left: var(--spacing-m) solid var(--clr-accent-green); /* left accent border */
+    padding: var(--spacing-m);
+    margin: var(--spacing-l) 0 var(--spacing-l) 0;
+    background-color: var(--clr-grey);
+    quotes: "“" "”" "‘" "’";
 }
 blockquote:before {
-	content: open-quote;
-	font-size: var(--font-h1-size);
-	line-height: 0;
-	margin-right: var(--spacing-m);
-	vertical-align: calc( -0.75 * var(--spacing-m));
-	color: var(--clr-accent-yellow);
+    content: open-quote;
+    font-size: var(--font-h1-size);
+    line-height: 0;
+    margin-right: var(--spacing-m);
+    vertical-align: calc( -0.75 * var(--spacing-m));
+    color: var(--clr-accent-yellow);
 }
 blockquote p {
-	display: inline;
+    display: inline;
 
-	font-size: var(--font-h5-size);
-	font-style: italic;
+    font-size: var(--font-h5-size);
+    font-style: italic;
 
-	color: var(--clr-white);
+    color: var(--clr-white);
 }
 
 code {
-	font-family: FontMonospace;
+    font-family: FontMonospace;
     font-weight: 600;
-	color: var(--clr-black);
+    color: var(--clr-black);
 
-	padding: 0 calc(var(--spacing-s)*4);
+    padding: 0 calc(var(--spacing-s)*4);
 
-	background-color: var(--clr-white-dark);
-	border-radius: var(--spacing-s);
+    background-color: var(--clr-white-dark);
+    border-radius: var(--spacing-s);
 }
 
 table {
-	font-family: FontMonospace;
-	font-size: calc(0.75 * var(--font-p-size));
-	margin-bottom: var(--spacing-l);
-	margin-top: var(--spacing-l);
+    font-family: FontPrimary;
+    font-size: calc(0.75 * var(--font-p-size));
+    margin-bottom: var(--spacing-l);
+    margin-top: var(--spacing-l);
 }
 table * {
-	border: solid 1px;
-	padding: calc(0.75 * var(--spacing-s));
+    border: solid 1px;
+    padding: calc(0.75 * var(--spacing-s));
 }
 thead {
-	font-weight: 700;
+    font-weight: 700;
 }
 tbody {
 }
 tr {
 }
 td {
-	text-align: center;
-	padding: calc(1.5 * var(--spacing-s));
+    text-align: center;
+    padding: calc(1.5 * var(--spacing-s));
 }
 hr {
-	color: var(--clr-grey);
-	margin-top: var(--spacing-m);
-	margin-bottom: var(--spacing-m);
+    color: var(--clr-grey);
+    margin-top: var(--spacing-m);
+    margin-bottom: var(--spacing-m);
 }
 
 // SFX: Warm Glow
 .txt-glow-warm {
-	background: linear-gradient(
-		-90deg,
-		var(--clr-accent-red),
-		DarkOrange,
-		var(--clr-accent-red)
-	)
-	0 0 / 400% 100%;
-	color: transparent;
-	background-clip: text;
+    background: linear-gradient(
+        -90deg,
+        var(--clr-accent-red),
+        DarkOrange,
+        var(--clr-accent-red)
+    )
+    0 0 / 400% 100%;
+    color: transparent;
+    background-clip: text;
 }
 a.txt-glow-warm:hover {
-	border-bottom: 0.10em solid var(--clr-white);
+    border-bottom: 0.10em solid var(--clr-white);
 }
 @media (prefers-reduced-motion: no-preference) {
-	.txt-glow-warm {
-	    animation: move-bg 20s linear infinite;
-	}
-	@keyframes move-bg {
+    .txt-glow-warm {
+        animation: move-bg 20s linear infinite;
+    }
+    @keyframes move-bg {
         to {
             background-position: 400% 0;
         }
-	}
+    }
 }
 
 // SFX: Cold Glow
 .txt-glow-cold {
-	background: linear-gradient(
-		-90deg,
-		var(--clr-accent-blue),
-		DeepSkyBlue,
-		var(--clr-accent-blue)
-	)
-	0 0 / 400% 100%;
-	color: transparent;
-	background-clip: text;
+    background: linear-gradient(
+        -90deg,
+        var(--clr-accent-blue),
+        DeepSkyBlue,
+        var(--clr-accent-blue)
+    )
+    0 0 / 400% 100%;
+    color: transparent;
+    background-clip: text;
 }
 a.txt-glow-cold:hover {
-	border-bottom: 0.10em solid var(--clr-white);
+    border-bottom: 0.10em solid var(--clr-white);
 }
 @media (prefers-reduced-motion: no-preference) {
-	.txt-glow-cold {
-		animation: move-bg 20s linear infinite;
-	}
-	@keyframes move-bg {
-		to {
-			background-position: 400% 0;
-		}
-	}
+    .txt-glow-cold {
+        animation: move-bg 20s linear infinite;
+    }
+    @keyframes move-bg {
+        to {
+            background-position: 400% 0;
+        }
+    }
 }

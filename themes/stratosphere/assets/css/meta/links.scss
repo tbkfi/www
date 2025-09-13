@@ -12,7 +12,9 @@ footer > section.meta-links > ul {
 }
 
 footer > section.meta-links > ul {
+    max-width: 100%;
     padding: var(--spacing-s) 0;
+    background-color: transparent;
 }
 footer > section.meta-links > ul > li {
     margin: 0;

@@ -29,14 +29,14 @@ section.preview-big > a.header {
 
 // Section header (title)
 section.preview-big > a.header > .title {
-    font-family: FontDisplayPrimary;
+    font-family: FontDisplay;
     font-size: var(--font-h2-size);
     font-weight: 800;
 	color: var(--clr-white);
 }
 // Section header (description)
 section.preview-big > a.header > .description {
-    font-family: FontMonospace;
+    font-family: FontDisplay;
     font-size: var(--font-h4-size);
     font-weight: 700;
 	color: var(--clr-white);
@@ -60,6 +60,9 @@ section.preview-big.log > a {
 section.preview-big > ul.entries {
 	display: flex;
 	flex-direction: column;
+
+    max-width: 100%;
+    background-color: transparent;
 }
 
 // Entry
@@ -98,7 +101,6 @@ section.preview-big > ul.entries > li.entry > div.header > ul.meta > li.taxonomy
     overflow: auto;
 }
 section.preview-big > ul.entries > li.entry > div.header > ul.meta > li.title > a {
-    font-family: FontDisplayPrimary;
     font-size: var(--font-h3-size);
     font-weight: 600;
 	color: var(--clr-black);
@@ -107,7 +109,6 @@ section.preview-big > ul.entries > li.entry > div.header > ul.meta > li.title > 
     color: var(--clr-accent-red);
 }
 section.preview-big > ul.entries > li.entry > div.header > ul.meta > li.date {
-    font-family: FontDisplayPrimary;
     font-size: var(--font-h6-size);
     font-weight: 600;
 	color: var(--clr-grey);
@@ -123,7 +124,7 @@ section.preview-big > ul.entries > li.entry > div.header > ul.meta > li.date > a
     font-weight: 700;
     color: var(--clr-white);
 
-    padding: var(--spacing-s);
+    padding: calc(var(--spacing-s)*0.25) var(--spacing-s);
     border-radius: var(--radius-s);
 	transition: box-shadow 0.5s ease;
 }
@@ -163,9 +164,7 @@ section.preview-big > ul.entries > li.entry > div.header > a.banner > figure > p
     width: 100%;
     height: 100%;
 
-    max-height: 16rem;
-
-    //aspect-ratio: 2 / 1;
+    aspect-ratio: 2 / 1;
     object-fit: cover;
 
     border-radius: var(--radius-s);
@@ -193,7 +192,6 @@ section.preview-big > a.end {
     display: inline-block;
     justify-content: center;
 
-    font-family: FontDisplayPrimary;
     font-weight: 700;
     font-size: var(--font-h6-size);
 

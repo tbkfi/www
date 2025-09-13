@@ -1,5 +1,5 @@
 article.list > section.meta * {
-	font-family: FontDisplayPrimary;
+	font-family: FontPrimary;
 	text-align: center;
     padding: 0;
 }
@@ -12,10 +12,13 @@ article.list > section.content {
 article.list > section.content > ul.entries {
     margin: 0;
     padding: 0;
+
+    max-width: 100%;
+    background-color: transparent;
 }
 
 article.list > section.content > ul.entries * {
-    font-family: FontDisplayPrimary;
+    font-family: FontPrimary;
     font-size: var(--font-p-size);
 
     margin: 0;
@@ -51,7 +54,7 @@ article.list > section.content > ul.entries > li > a.entry:hover {
 
 // Entry: Section (defaults)
 article.list > section.content > ul.entries > li > a.entry > .meta > .section {
-    font-family: FontDisplayPrimary;
+    font-family: FontPrimary;
     font-size: var(--font-p-size);
     font-weight: 800;
 

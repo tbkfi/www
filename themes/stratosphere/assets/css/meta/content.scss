@@ -14,7 +14,7 @@ section.meta-content {
 }
 
 section.meta-content > nav#TableOfContents {
-	font-family: FontDisplayPrimary;
+	font-family: FontPrimary;
 	font-weight: 500;
 }
 #TableOfContents:before {
@@ -36,6 +36,8 @@ section.meta-content > nav#TableOfContents {
 #TableOfContents ul {
 	list-style: number;
 
+    max-width: 100%;
+
     margin: 0;
     padding: 0;
 
@@ -43,17 +45,17 @@ section.meta-content > nav#TableOfContents {
 }
 #TableOfContents ul li {
     margin: 0;
-    padding: 0 0 0.25em 0;
+    padding: 0 0 calc(var(--spacing-s)*0.5) 0;
 }
 #TableOfContents li::before {
 }
 #TableOfContents li::marker {
-    font-size: 0.75em;
-    color: var(--clr-black);
+    font-size: var(--font-p-size);
+    color: var(--clr-grey);
 }
 #TableOfContents > ul > li > ul {
-	list-style: square;
-    padding: 0.25em 0.5em 0 2em;
+	list-style: circle;
+    padding: 0 0 0 var(--spacing-m);
 }
 section.meta-content > nav {
     width: 40%;
@@ -73,7 +75,7 @@ section.meta-content > figure > picture > img.header {
     border-radius: var(--radius-s);
 }
 section.meta-content > figure > figcaption {
-    font-family: FontDisplayPrimary;
+    font-family: FontPrimary;
     font-size: var(--font-p-size);
     font-weight: 300;
     font-style: italic;

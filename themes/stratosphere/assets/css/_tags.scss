@@ -14,6 +14,8 @@ ul.tags {
 	flex-direction: row;
     flex-wrap: wrap;
 
+    background-color: transparent;
+
     margin: 0 auto;
 }
 ul.tags > li.tag {
@@ -24,7 +26,7 @@ ul.tags > li.tag {
 ul.tags > li.tag > a {
     display: block;
 
-	font-family: FontDisplayPrimary;
+	font-family: FontPrimary;
     font-weight: 700;
     font-size: calc(var(--font-p-size)*0.75);
 	color: var(--clr-black);

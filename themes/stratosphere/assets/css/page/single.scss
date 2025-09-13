@@ -19,10 +19,12 @@ article.single > section.content {
 }
 
 article.single > section.content > * > img {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+
     image-rendering: auto;
 
-    width: 100%;
-    height: auto;
-
+    margin-bottom: var(--spacing-m);
     border-radius: var(--radius-m);
 }

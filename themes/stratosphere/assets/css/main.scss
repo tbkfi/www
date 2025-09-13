@@ -2,14 +2,14 @@
 @import "reset";
 @import "var";
 
+// Text & Elements
+@import "text";
+@import "tags";
+
 // Document Base
 @import "canvas";
 @import "header";
 @import "footer";
-
-// Text & Elements
-@import "text";
-@import "tags";
 
 // Priority dependencies
 @import "meta/status";
