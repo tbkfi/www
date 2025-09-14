@@ -124,6 +124,12 @@ If package specific build time configuration isn't a concern, basically any one 
 is a perfectly viable and functional base to work off. And in that case I would prefer something more
 straightforward like Debian or Arch, depending on how many and how recent the packages need to be.
 
+If the hardware platform requires ISV-certifications or is otherwise employing more closed source components, Fedora
+would perhaps be the most stable option. Sadly I can no longer recommend Ubuntu for typical usage, as Canonical
+has a habit of making very questionable choices when it comes to the direction of the distribution. Just be mindful
+that Ubuntu is often used as the de facto platform for standardised workflows that employ more complicated components 
+or supersets of software like CUDA, Cloud Native, or Machine Learning.
+
 ## Configuration Details
 
 Pending review and proofread
