@@ -3,6 +3,9 @@ languageCode = "en-us"
 title = "TBK"
 theme = "stratosphere"
 
+[minify]
+    minifyOutput = true
+
 [params]
     author = "Tuomo Björk"
 
