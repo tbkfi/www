@@ -292,47 +292,62 @@ And that brings us to the next and the last topic for this post...
 ## Implementation and Management
 
 Going for an "all-custom" setup is timeconsuming in a lot of ways, but with that responsibility comes 
-great power. Growing your understanding of how the various system components interact allow you to better
-plan, manage, and automate Linux systems. But before building your preferred environment, it's imperative
-to setup a sensible structure to version everything. Otherwise you'll be very sad when it all goes poof one way
-or another as you go crazy with testing the waters.
+an opportunity for great power. Learning to understand what the various system components are, and how they interact allow better
+design, management, and automation of the system.
 
-The classic solution to this problem is a dotfile repository which contains the user's preferred configurations,
-and primarily refers to the xdg config directory (`~/.config`) and other "hidden" configuration files present on the system.
-Though it's obviously not limited to just that, you can chuck whatever you feel is important in there for recreating your environment(s).
+Before embarking on this journey of building your preferred environment,
+it's imperative to setup a sensible structure to version all your work. Otherwise you'll be very sad when it all goes poof.
+The classic approach to this problem has been a "dotfile repository" which contains the user's preferred configurations.
+The name primarily refers to the contents of XDG's config dir (~/.config by default) and other "hidden" configuration files present on the system.
+Though the repository material is obviously not limited to just that, you can chuck whatever you feel is important to you for recreating your environments in there.
 
-In my case my dotfiles include not only the traditional configuration files, but also a couple setup scripts for the actual base gentoo install,
+My dotfiles include not only the traditional configuration files, but also a couple setup scripts for the actual base gentoo install,
 matches for sets of desired packages, convenience scripts for refreshing system and user configurations, and basic system service configurations
-among other things. I also version in limited capacity some important keystubs for SSH and GPG under a submodule.
+among other things. I also version in limited capacity some important keystubs for SSH keys, GPG keys, and other tokens, so everything is always linked properly.
 
-The following is a tree-view of my dotfile directory with submodule content pruned:
+The following is a tree-view of my dotfile directory with submodule contents pruned:
 
 ![Dotfile directory structure](dotfile-dir.png)
 
-From the image its apparent the sources are split into "machine", "pkg", "sys", and "user"
-directories. The machine directory is specific to a hardware platform, while "pkg" and "sys" pertain
-to the general package and system selections and configurations. Meanwhile the "user" directory encompasses
+It can be seen from the structure that the main sources are split into the *machine*, *pkg*, *sys*, and *user*
+directories. The *machine* directory is specific to a hardware platform, while *pkg* and *sys* pertain
+to the general package and system selections and configurations. Meanwhile the *user* directory encompasses
 all user-specific configurations, scripts, and environment variables.
 
-This provides clear segmentation of the system and user configurations, and allows relative recreation of the
+This structure provides clear segmentation of the versioned components and allow relative recreation of the
 directory paths inside each subdirectory, making it rather intuitive to see what each file points to on the actual system.
-As an example, the "sys" directory emulates the system root directory, which contains directories like etc. While the user
+As an example, the *sys* directory emulates the system root directory, which contains directories like *etc*. While the user
 directory is akin to the user's home root directory, containing directories like (.)config and bin.
 
-This is what my current user directory structure looks like when exploded a little:
+Next is an example of what my user directory structure looks like:
 
 ![User directory structure](user-dir.png)
 
-Looking at the image it can be seen that I store my "dotfiles" (repository dir) at the root of my user's home directory, from there
-i symbolically link all the targets into their paths on the filesystem. This linking is handled through the convenience scripts present
-in my user's `~/bin` directory (see: [dot-refresh](https://github.com/tbkfi/dotfile/blob/main/src/user/bin/dot-refresh) and [portage-refresh](https://github.com/tbkfi/dotfile/blob/main/src/user/bin/portage-refresh)).
+You can spot my "dotfiles" (the repository dir) at the root of my user's home directory.
+To hook the relevant configs in, I symbolically link all user-specific targets into their respective paths on the filesystem.
+This linking is handled through convenience scripts present in my ~/bin directory
+(see: [dot-refresh](https://github.com/tbkfi/dotfile/blob/main/src/user/bin/dot-refresh) and [portage-refresh](https://github.com/tbkfi/dotfile/blob/main/src/user/bin/portage-refresh)),
+so I can be sure there won't be any fat-fingering going on.
 
-The benefit of this approach is that all the applied custom configurations are in actuality present within that single `~/dotfile` directory,
-and its easy to keep them all versioned in the active git repository. This allows testing changes incrementally, and enables simple rollbacks
-to known working configurations via `git restore` if some new changes produced unexpected outcomes.
+The benefit of this approach is that all the applied custom configurations are stored within the single ~/dotfile directory, not replicated into multiple locations.
+This not only makes versioning a breeze, but allows changes to be tested incrementally, with easy rollbacks
+to known working configurations via *git restore* in the event something breaks after a change.
 
+All user-specific daily file usage (reading, writing, deleting) is localised into the ~/local (note: NOT ~/.local) directory,
+which has been [mapped](https://github.com/tbkfi/dotfile/blob/main/src/user/config/user-dirs.dirs) as the path for many of the usual XDG directories (desktop, document, download, music, ...).
+And, as I prefer consistent naming, I've also changed the directory names to all be lowercase and singular instead of a mix of singular and plural.
+This is a small change, but these things add up to make the UX much more enjoyable.
 
-This isn't the most elegant solution in the world, but it's rather powerful while remaining simple to manage. My spaghetti code aside,
-it works great and enables me to try new tools and automations safely without risking functionality, while providing a base that I can continue
-to build on top of as I best see fit.
+The counterpart for the ~/local directory is the ~/remote directory, which contains all remote mounts.
+The remote mounts are defined in my dotfiles as [regular files](https://github.com/tbkfi/dotfile/tree/main/src/user/config/dotfile/remote), whose contents define their unique identifiers and other mounting options.
+Mounting and unmounting the targets is done using convenience scripts that read available targets from the definitions and see what is currently available (locally or via network routes).
+
+## Wrap-up
+
+That's it for the brief overview of my dotfiles! I didn't go over everything, but I tried to include the basics while outlining the scope.
+The rest should be sort-of self explanatory once the general structure is clear.
+
+While not the most elegant solution in the world, I find it rather powerful while remaining simple enough to manage and maintain for daily use.
+My spaghetti code aside, the setup works great and enables me to try new tools, automations, and approaches safely in my environment without risking normal usability,
+while providing a base that I can continue to build on top of as I best see fit.
 
