@@ -6,31 +6,39 @@
 //  src: url("/font/Rosario/font.ttf") format("truetype");
 //}
 
-@font-face {
-    font-family: "FontDisplay";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("/font/UbuntuSans-Variable/UbuntuSans.woff2") format("woff2");
-}
+//@font-face {
+//    font-family: "FontDisplay";
+//    font-style: normal;
+//    font-weight: 100 900;
+//    font-stretch: 75% 125%;
+//    font-display: swap;
+//    src: url("/font/UbuntuSans-Variable/UbuntuSans.woff2") format("woff2");
+//}
 @font-face {
     font-family: "FontPrimary";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100 900;
+    font-stretch: 75% 125%;
     font-display: swap;
     src: url("/font/UbuntuSans-Variable/UbuntuSans.woff2") format("woff2");
 }
 @font-face {
     font-family: "FontMonospace";
-    font-weight: 400;
     font-style: normal;
+    font-weight: 100 900;
+    font-stretch: 75% 125%;
     src: url("/font/UbuntuSansMono-Variable/UbuntuSansMono.woff2") format("woff2");
     font-display: swap;
 }
 @font-face {
     font-family: "FontMonospaceItalic";
-    font-weight: 400;
     font-style: italic;
+    font-weight: 100 900;
+    font-stretch: 75% 125%;
     src: url("/font/UbuntuSansMono-Variable/UbuntuSansMono-Italic.woff2") format("woff2");
     font-display: swap;
+}
+
+:root {
+    --FontDisplay: "FontPrimary"; // note: Remove if need different display font
 }

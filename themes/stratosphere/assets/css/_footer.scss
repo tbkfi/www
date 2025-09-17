@@ -1,7 +1,7 @@
 // PARTIAL: footer.html
 
 footer * {
-    font-family: FontDisplay;
+    font-family: var(--FontDisplay);
 }
 
 footer > section.copyright {

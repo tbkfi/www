@@ -29,16 +29,16 @@ section.preview-big > a.header {
 
 // Section header (title)
 section.preview-big > a.header > .title {
-    font-family: FontDisplay;
+    font-family: var(--FontDisplay);
     font-size: var(--font-h2-size);
-    font-weight: 800;
+    font-weight: 900;
 	color: var(--clr-white);
 }
 // Section header (description)
 section.preview-big > a.header > .description {
-    font-family: FontDisplay;
+    font-family: var(--FontDisplay);
     font-size: var(--font-h4-size);
-    font-weight: 700;
+    font-weight: 600;
 	color: var(--clr-white);
 }
 section.preview-big > a.header:hover {
@@ -121,10 +121,10 @@ section.preview-big > ul.entries > li.entry > div.header > ul.meta > li.date {
 section.preview-big > ul.entries > li.entry > div.header > ul.meta > li.date > a.section {
     display: inline-block;
 
-    font-weight: 700;
+    font-weight: 600;
     color: var(--clr-white);
 
-    padding: calc(var(--spacing-s)*0.25) var(--spacing-s);
+    padding: calc(var(--spacing-s)*0.10) calc(var(--spacing-s)*0.50);
     border-radius: var(--radius-s);
 	transition: box-shadow 0.5s ease;
 }

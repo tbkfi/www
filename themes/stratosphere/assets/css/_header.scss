@@ -1,7 +1,7 @@
 // PARTIAL: header.html
 
 header * {
-	font-family: FontDisplay;
+	font-family: var(--FontDisplay);
 }
 header {
 	display: flex;
