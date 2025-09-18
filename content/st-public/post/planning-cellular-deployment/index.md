@@ -2,7 +2,7 @@
 title = "Planning a Cellular Deployment"
 date = 2025-08-30
 
-type_img = "📶"
+emoji = "📶📡🗺️"
 banner_c = "Teltonika RUTX50 industrial 5G router running OpenWRT derived RutOS."
 
 tags = ["infrastructure", "radio", "networking", "cellular", "5G", "elisa", "wifi", "sysadmin", "openwrt", "teltonika", "mikrotik", "gl-inet", "panorama-antennas", "poynting"]
