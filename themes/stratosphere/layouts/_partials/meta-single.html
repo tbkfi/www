@@ -6,9 +6,24 @@
 	<h3 class="section">
 		<a class="txt-glow-warm" href="{{ .CurrentSection.RelPermalink }}">{{ .CurrentSection.Title | lower }}</a>
 	</h3>
+	{{ if .Params.emoji }}
+	<h2 class="emoji">{{ .Params.emoji }}</h2>
+	{{ end }}
 	{{ partial "tags.html" . }}
 	<ul class="nav">
-		<li class="prev"><a href="{{ with .Prev }}{{ .RelPermalink }}{{ end }}">Previous</a></li>
-		<li class="next"><a href="{{ with .Next }}{{ .RelPermalink }}{{ end }}">Next</a></li>
+		<li class="prev">
+			{{ with .PrevInSection }}
+			<a href="{{ .RelPermalink }}">Previous</a>
+			{{ else }}
+			<p>Previous</p>
+			{{ end }}
+		</li>
+		<li class="next">
+			{{ with .NextInSection }}
+			<a href="{{ .RelPermalink }}">Next</a>
+			{{ else }}
+			<p>Next</p>
+			{{ end }}
+		</li>
 	</ul>
 </section>

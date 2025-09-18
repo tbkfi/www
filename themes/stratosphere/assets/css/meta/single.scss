@@ -2,23 +2,24 @@
 
 section.meta-single * {
     font-family: FontPrimary;
-    text-align: center;    
+    background-color: transparent;
 
     margin: 0;
     padding: 0;
-
-    list-style-type: none;
+}
+section.meta-single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section.meta-single > .title {
     font-size: var(--font-h1-size);
 }
-
 section.meta-single > .time {
     font-size: var(--font-h4-size);
     color: var(--clr-grey);
 }
-
 section.meta-single > .section {
     font-size: var(--font-h3-size);
     color: white;
@@ -26,26 +27,34 @@ section.meta-single > .section {
     margin-bottom: var(--spacing-m);
 }
 section.meta-single > .section > a:hover {
-    color: transparent;
+    //color: transparent;
+    //text-decoration: underline;
+}
+section.meta-single > .emoji {
+    font-size: var(--font-h1-size);
+    background-color: var(--clr-white-dark);
 
-    text-decoration: underline;
+    padding: var(--spacing-s);
+    margin-bottom: var(--spacing-m);
 }
 section.meta-single > .tags {
-    margin: 0 auto;
 }
 
 section.meta-single > .nav {
     display: flex;
     justify-content: space-between;
-    list-style-type: none;
 
-    max-width: 100%;
+    width: 100%;
+
+    padding: var(--spacing-s);
     margin: var(--spacing-s);
-    background-color: transparent;
+}
+section.meta-single > .nav p {
+    color: var(--clr-grey);
+    font-weight: 500;
+    text-decoration: line-through;
 }
 section.meta-single > .nav > .prev {
-    text-align: left;
 }
 section.meta-single > .nav > .next {
-    text-align: right;
 }
