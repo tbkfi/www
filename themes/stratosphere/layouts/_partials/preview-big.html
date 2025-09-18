@@ -34,7 +34,9 @@
 			<hr>
 			<ul>
 				<li class="description">{{ .Summary | truncate 220 }}</li>
+				{{ if .Truncated }}
 				<li class="link"><a href="{{ .Permalink }}">Continue reading ...</a></li>
+				{{ end }}
 			</ul>
 		</li>
 	{{ end }}
