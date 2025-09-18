@@ -6,38 +6,38 @@ url = "/privacy"
 draft = false
 +++
 
-## Cookies and Logging
+## Cookies, Tracking, Logging
 
-### Cookies
+Some variants of this website may utilise cookies to store credentials for webserver-gated access
+to files and other available resources.
 
-This website does not implement cookies for tracking. If accessing the WWW-variant of the
-website, the host platform (see [below](#WWW-variant)) may implement its own logging and/or tracking.
-Additionally, some variants of the website may implement basic cookies to store access credentials
-for certain resources when the user authenticates themselves to the webserver.
+The public version of this website uses cloudflare insights to gather basic usage data. Its loading may be blocked
+by the browser, browser extensions (ublock origin, noscript), or other network solutions if undesired.
 
-Additional care is put into content hosted on this website, so it doesn't load third-party
+Care is put into the content hosted on this website, so it doesn't load third-party
 cookies or scripts when navigating on this site.
 
 ### WWW-variant
 
 The WWW-variant of this website is reachable under the `www.tbk.fi` subdomain, and its
 hosted on either [GitHub Pages](https://pages.github.com/) or [Cloudflare Pages](https://pages.cloudflare.com/).
-Therefore the logging is done by the respective service according to their settings.
+Therefore some of the logging is done by the respective service according to their settings.
 
 ### DMZ-variant
 
 The DMZ-variant of this website is reachable under the `www.dmz.tbk.fi` subdomain, and includes
 full webserver-logging which stores visitor IPs and HTTP requests for 30 days, until the
-log is rotated. Rotated logs get deleted after another 30 days.
+log is rotated. Rotated logs get purged after another 30 days.
 
 ### LAN-variant
 
 The LAN-variant of this website is reachable under the `www.lan.tbk.fi` subdomain from the
-internal LAN subnet(s). Full network logs and webserver logs, stored indefinitely.
+internal LAN subnet(s). Full network- and webserver logs are stored indefinitely.
 
 ## Javascript
 
-This **website** does not require javascript to function. A `main.js` script is served to clients, but it's entirely optional.
+This **website** does not require javascript to function. A `main.js` script is served to clients,
+but it's entirely optional. It may contain some visual candy or other optional silly features.
 
 ## Abuse
 
