@@ -6,6 +6,7 @@ section.meta-content {
 
 	justify-content: space-between;
     align-items: top;
+    gap: var(--spacing-m);
 
     background-color: var(--clr-white-dark);
     border-radius: var(--radius-m);
@@ -22,7 +23,7 @@ section.meta-content > nav#TableOfContents {
     font-size: var(--font-h4-size);
 	font-weight: 700;
 
-	margin-bottom: var(--spacing-m);
+	margin-bottom: var(--spacing-s);
 }
 #TableOfContents {
 	display: flex;
@@ -30,18 +31,13 @@ section.meta-content > nav#TableOfContents {
 	justify-content: left;
 
     counter-reset: section;
-
-	margin-right: var(--spacing-m);
 }
 #TableOfContents ul {
 	list-style: number;
 
-    max-width: 100%;
-
     margin: 0;
     padding: 0;
-
-    padding-left: 1em;
+    padding-left: var(--spacing-m);
 }
 #TableOfContents ul li {
     margin: 0;
@@ -58,10 +54,13 @@ section.meta-content > nav#TableOfContents {
     padding: 0 0 0 var(--spacing-m);
 }
 section.meta-content > nav {
-    width: 40%;
+    width: 300px;
 }
 section.meta-content > figure {
-    width: 60%;
+    flex: 1;
+}
+section.meta-content > figure:only-child {
+    flex: 1 1 100%
 }
 section.meta-content > figure > picture > img.header {
     width: 100%;

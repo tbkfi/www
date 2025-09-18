@@ -1,4 +1,8 @@
 <section class="meta-content">
-	{{ .TableOfContents }}
+	{{ with .TableOfContents }}
+		{{ if gt (len (plainify .)) 0 }}
+			{{ . | safeHTML }}
+		{{end}}
+	{{ end }}
 	{{ partial "media-banner.html" . }}
 </section>
