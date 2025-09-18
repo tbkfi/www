@@ -45,6 +45,10 @@ space and put two of them in. This was definitely overkill since even one of the
 relative to its size, but I figured what's the harm. At least if something happens to one there'll be another
 to pick up the slack.
 
+Securing the fans to the chassis was done using 3M's velcrow tape. One part on the chassis,
+and its counterpart on the fan. The added thickness contributed to just enough extra height that the fans
+press lightly against the top cover, making the setup feel very secure even when jostled around vigorously.
+
 ## Results
 
 Results were great. I observed the typical load temperatures drop from 65C all the way down to 28-36C depending on CPU load, which is hard to argue with.
