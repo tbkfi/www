@@ -106,7 +106,14 @@ to skip any leading and trailing garbage, so you should be able to just directly
 containing the patches.
 
 Here's an example of applying an arbitrary patch to the kernel from a plain-text email, when inside the `$SRC_TREE` directory:
-`patch -p1 < /path/to/my/custom-patchfile.eml`.
+
+```
+# Apply an arbitrary patch
+patch -p1 < /path/to/my/custom-patchfile.eml
+
+# Reverse an arbitrary patch
+patch -R -p1 < /path/to/my/custom-patchfile.eml
+```
 
 ### Building and Installing
 

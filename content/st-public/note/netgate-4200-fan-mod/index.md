@@ -2,7 +2,7 @@
 title = "Netgate 4200 Fan Mod"
 date = 2025-08-09
 
-type_img = ""
+emoji = "💨🌡️♨️"
 banner_c = "Inside view of the Netgate 4200 with two added Noctua 40x20mm fans."
 
 tags = ["infrastructure", "networking", "freebsd", "pfsense", "netgate", "diy" ]
