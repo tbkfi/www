@@ -123,40 +123,57 @@ ol > li {
 }
 
 blockquote {
-    font-family: FontPrimary;
-    border-left: var(--spacing-m) solid var(--clr-accent-green); /* left accent border */
-    padding: var(--spacing-m);
-    margin: var(--spacing-l) 0 var(--spacing-l) 0;
-    background-color: var(--clr-grey);
-    quotes: "“" "”" "‘" "’";
+    //font-family: FontPrimary;
+    //border-left: var(--spacing-m) solid var(--clr-accent-green); /* left accent border */
+    //padding: var(--spacing-m);
+    //margin: var(--spacing-l) 0 var(--spacing-l) 0;
+    //background-color: var(--clr-grey);
+    //quotes: "“" "”" "‘" "’";
 }
 blockquote:before {
-    content: open-quote;
-    font-size: var(--font-h1-size);
-    line-height: 0;
-    margin-right: var(--spacing-m);
-    vertical-align: calc( -0.75 * var(--spacing-m));
-    color: var(--clr-accent-yellow);
+    //content: open-quote;
+    //font-size: var(--font-h1-size);
+    //line-height: 0;
+    //margin-right: var(--spacing-m);
+    //vertical-align: calc( -0.75 * var(--spacing-m));
+    //color: var(--clr-accent-yellow);
 }
 blockquote p {
-    display: inline;
+    //display: inline;
 
-    font-size: var(--font-h5-size);
-    font-style: italic;
+    //font-size: var(--font-h5-size);
+    //font-style: italic;
 
-    color: var(--clr-white);
+    //color: var(--clr-white);
 }
 
+// Code: inline
 code {
-    font-family: FontMonospace;
-    font-weight: 400;
-    color: var(--clr-white);
+    font-family: FontMonospace, monospace;
+    font-size: calc(var(--font-p-size)*0.90);
+    font-weight: 450;
+    color: black;
+
+    white-space: pre-wrap;
 
     padding: calc(var(--spacing-s)*0.10) calc(var(--spacing-s)*0.5);
     margin: 0 calc(var(--spacing-s)*0.25);
 
-    background-color: #333333;
+    background-color: var(--clr-white-black);
     border-radius: var(--radius-s);
+}
+
+// Code: block
+pre > code {
+    display: block;
+    white-space: pre;
+    overflow-x: auto;
+
+    line-height: calc(var(--font-p-lineheight)*0.75);
+    background-color: var(--clr-white-dark);
+
+    margin-bottom: var(--spacing-m);
+    padding: var(--spacing-s);
 }
 
 table {
@@ -185,6 +202,7 @@ hr {
     margin-top: var(--spacing-m);
     margin-bottom: var(--spacing-m);
 }
+
 
 // SFX: Warm Glow
 .txt-glow-warm {

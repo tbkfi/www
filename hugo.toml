@@ -23,3 +23,21 @@ theme = "stratosphere"
     desc_post = "topic specific content pieces"
     desc_note = "various insights on projects and media"
     desc_log  = "media logs"
+
+[markup]
+    [markup.highlight]
+        style = "friendly"
+        tabWidth = 4
+        
+        noClasses = true
+        guessSyntax = false
+        wrapperClass = 'highlight'
+        
+        lineNos = true
+        anchorLineNos = false
+        codeFences = true
+        lineNumbersInTable = false
+        hl_Lines = ''
+        hl_inline = false
+        lineAnchors = ''
+        lineNoStart = 1

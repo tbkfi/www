@@ -6,6 +6,7 @@ $canvas-width-max: 1000px;
 $clr-black: #141414;
 $clr-white: #FAF0E9;
 $clr-white-dark: mix(black, $clr-white, 5%);
+$clr-white-black: mix(black, $clr-white, 10%);
 $clr-grey: #494949;
 
 $clr-accent-red: #F74E45;
@@ -73,6 +74,7 @@ $font-p-size:  $font-std * $font-mult-p;
 	--clr-black: #{$clr-black};
 	--clr-white: #{$clr-white};
 	--clr-white-dark: #{$clr-white-dark};
+    --clr-white-black: #{$clr-white-black};
 	--clr-grey: #{$clr-grey};
 	
 	--clr-accent-red: #{$clr-accent-red};
