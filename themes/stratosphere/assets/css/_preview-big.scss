@@ -145,6 +145,9 @@ section.preview-big > ul.entries > li.entry > div.header > ul.meta > li.date > a
     color: var(--clr-black);
     background-color: var(--clr-accent-yellow);
 }
+section.preview-big > ul.entries > li.entry > div.header > ul.meta > li.date > .emoji {
+    display: inline-block;
+}
 
 // Entry Banner Image
 section.preview-big > ul.entries > li.entry > div.header > a.banner {
