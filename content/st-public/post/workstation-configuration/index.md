@@ -5,7 +5,7 @@ date = 2025-01-30
 emoji = "💻🐧🛠️"
 banner_c = "An image of a pretty typical laptop."
 
-tags = ["infrastructure", "linux", "sysadmin", "gentoo", "swaywm", "automation" ]
+tags = [ "baseline", "infrastructure", "linux", "sysadmin", "gentoo", "swaywm" ]
 draft = false
 +++
 
