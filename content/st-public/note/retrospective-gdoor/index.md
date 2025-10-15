@@ -3,7 +3,7 @@ title = "Retrospective: GDOOR"
 date = 2025-10-09
 
 emoji = "⚙️💻📟"
-banner_c = "Device components and "
+banner_c = "Device diagram listing the used components and the layout."
 
 tags = ["programming", "embedded", "cxx", "oop"]
 draft = false
