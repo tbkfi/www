@@ -60,6 +60,8 @@ int main() {
 
 ## Definitions
 
+![GDOOR and Component interfaces](class-overview.png)
+
 ### GarageDoor
 
 Next would be appropriate to go over the definition of the machine itself, as well as the
@@ -458,6 +460,6 @@ which would've allowed me to just choose the implementation I want to use at dif
 device code when polling for user input.
 
 Combining these multiple press detection functions with a global input cooldown on the device side
-would've bene the perfect solution with easy to maintain interfaces and granular component specific limits.
+would've been the perfect solution with easy to maintain interfaces and granular component specific limits.
 
 The more you know...
