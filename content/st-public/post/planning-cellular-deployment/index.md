@@ -112,7 +112,7 @@ If you saw the banner for this post, you've already been spoiled on what I event
     - SMA: acceptable external connectivity (can be modded)
     - Wifi 6
     - Useful online material at [confusedbird (thread 119)](https://confusedbird.com/thread-119.html), for antenna mappings and internal layout.
-    - [Flyer](https://cdn.mikrotik.com/web-assets/product_files/Chateau5GR17ax_250616.pdf)
+    - [Flyer](chateau5g-r17ax-flyer.pdf)
 - GL-iNET Spitz AX (GL-X3000)
     - MT7981A (arm64), 2 core, 512MB RAM, 8GB NAND.
     - OpenWRT (modified, should have mainline support)
@@ -124,7 +124,7 @@ If you saw the banner for this post, you've already been spoiled on what I event
     - Price: 355€
     - SMA: great external connectivity (6x)
     - Wifi 6
-    - [Flyer](https://static.gl-inet.com/www/images/products/datasheet/x3000_datasheet_20250704.pdf) (they call this a datasheet, it's not really)
+    - [Flyer](glx3000-flyer.pdf) (they call this a datasheet, it's not really)
 - Teltonika RUTX50
     - IPQ4018 (armhf), 4 core, 256MB RAM, 256MB NAND.
     - RutOS (modified OpenWRT, has mainline support)
@@ -136,7 +136,7 @@ If you saw the banner for this post, you've already been spoiled on what I event
     - Price: 500€
     - SMA: excellent (4x cellular, 2x wifi, 1x gps)
     - Wifi 4 (2.4GHz), Wifi 5 (5GHz)
-    - [Flyer](https://teltonika-networks.com/cdn/products/2023/01/63b7f88131a497-19366814/flyer-2025-01/rutx50-flyer-2025-v11.pdf), [Datasheet](https://teltonika-networks.com/cdn/products/2023/01/63b7f88131a497-19366814/datasheet-pdf/rutx50-datasheet-v182.pdf)
+    - [Flyer](rutx50-flyer.pdf), [Datasheet](rutx50-datasheet.pdf)
 
 So what's actually the difference between these models? For the sake of technical details, lets ignore the price outlier.
 
