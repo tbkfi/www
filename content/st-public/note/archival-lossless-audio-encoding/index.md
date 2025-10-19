@@ -698,154 +698,195 @@ the rest of the style guides you can ape directly from the official [MusicBrainz
 
 ## Automated script
 
-All right, now to smash it all together into a workflow and script that is easy to use.
-
-- The workflow
-    - [1] Create an Album specific directory
-    - [2] Move all Album tracks into the directory
-    - [3] Rename tracks and add track numbers
-    - *Repeat for all the albums you wish to process*
-
-Now you should have a directory that looks something like:
-
-```
-$ tree ./input
-
-encode-my-stuff.sh
-input/
-├── album1
-│   ├── 01. TRACK.wav
-│   ├── 02. AnOtHeR TRACK.wav
-│   └── 03. Yep.wav
-└── album2
-    └── 01. 鳥の詩.flac
-```
-
-Next step is to run the script I've written below by passing it the full path of your ingest
-directory (e.g. `bash encode-my-stuff.sh /home/user/music/ingest`). You can also not pass the
-directory path, and it'll look for a dir named *input* at present working dir, and complain if it can't
-find one.
-
-The script just reads every track in an album directory inside the ingest directory, and creates a copy of the
-structure while encoding all matched tracks into the output location. This way you can decide for yourself
-when you're happy to nuke the source files.
+The script below will accept a file as its first argument and encode it as previously
+discussed into a lossless FLAC. An optional second argument can be given to specify an output
+directory. By default the script writes the encoded file next to the original with the original name
+and an `_ENCODE` suffix when a custom DST isn't given.
 
 ```bash
 #!/bin/bash
 
-encode_lossless_audio() {
-
-	# Require existence and access of and to SOURCE DIRECTORY
-	SRC_PATH="$1";
-	if [[ -z "$SRC_PATH" ]]; then
-		return;
-	else
-		[[ -d "$SRC_PATH" && -w "$SRC_PATH" ]] || return
-	fi
-	ALBUM_NAME="$(basename "$SRC_PATH")"
-
-	# Require access to OUTPUT DIRECTORY
-	OUT_DIR="$PWD/encode/$ALBUM_NAME"
-	mkdir -p "$OUT_DIR" || return
+encode_track_to_flac() {
+	T_START=$(date +%s)
 	
-	echo ">>> Encoding to FLAC"
-	echo ">> target: '$SRC_PATH'"
-	shopt -s nocaseglob
-	for SRC in "$SRC_PATH"/*.{wav,aiff,alac,flac}; do
-		[[ -e "$SRC" ]] || continue
-		TRACK_NAME="$(basename "$SRC")"
-		FLAC="$OUT_DIR/${TRACK_NAME%.*}.flac"
-		T_START=$(date +%s)
-
-		echo -n " * '$SRC' ... "
-		
-		# FLAC already exists?
-		if stat "$FLAC" &> /dev/null ; then
-			echo "ENCODE EXISTS"
-			continue
-		fi
-		
-		# Detect original sample format
-		# see: https://ffmpeg.org/doxygen/7.0/group__lavu__sampfmts.html
-		SAMPLE_FMT=$(ffprobe -v error -select_streams a:0 \
-			-show_entries stream=sample_fmt \
-			-of default=nokey=1:noprint_wrappers=1 "$SRC")
-		
-		PCM_FMT=""
-		case "$SAMPLE_FMT" in
-			s16) PCM_FMT=pcm_s16le ;;
-			s24) PCM_FMT=pcm_s24le ;;
-			s32) PCM_FMT=pcm_s32le ;;
-			flt|fltp) PCM_FMT=pcm_s24le ;; # float-packed, float-planar
-			dbl|dblp) PCM_FMT=pcm_s32le ;; # double-packed, double-planar
-			*) PCM_FMT=pcm_s16le ;;
-		esac
-		
-		# Detect channel layout and encode to FLAC
-		ffmpeg -loglevel -8 -n -i "$SRC" \
-			-af 'aformat=channel_layouts=mono|stereo|5.1|6.1|7.1' \
-			-c:a "$PCM_FMT" -f wav - \
-		| flac --best --blocksize=4096 --verify -o "$FLAC" - &>/dev/null
-		ENC_RC=$?
-		
-		T_ELAPSED=$(( $(date +%s) - $T_START ))
-		
-		if (( $ENC_RC )); then
-			echo "FAIL ($T_ELAPSED seconds)"
-			continue
-		else
-			echo "OK ($T_ELAPSED seconds)"
-		fi
-		
-		# Padding, Seektable
-		metaflac --remove-all --dont-use-padding "$FLAC"
-		metaflac --add-seekpoint=2s "$FLAC"
-		metaflac --merge-padding "$FLAC" ; metaflac --sort-padding "$FLAC"
-	done
-	shopt -u nocaseglob
-	echo -e "DONE\n"
+	# Error codes
+	RC_ERR_SOURCE=1
+	RC_ERR_OUTPUT=2
+	RC_ERR_ENCODE=3
 	
-	# Loudness normalisation
-	echo ">>> Applying Loudness Metadata"
-	echo ">> target: '$SRC_PATH'"
-	if command -v rsgain &> /dev/null; then
-		[[ -d "$OUT_DIR" ]] || return
-		rsgain easy -p ebur128 "$OUT_DIR"
-		echo -e "DONE\n"
-	else
-		echo -e "SKIP, NO RSGAIN BINARY\n"
-		continue
+	# Arguments
+	SRC="$1";
+	DST="$2";
+	
+	echo -n "[EncodeFlac]: "
+	
+	# SRC: was given?
+	if [[ -z "$SRC" ]]; then
+		echo "NO SOURCE PROVIDED!"
+		return $RC_ERR_SOURCE;
 	fi
+	
+	# SRC: exists?
+	if ! stat "$SRC" &>/dev/null; then
+		echo "DOESN'T EXIST!"
+		return $RC_ERR_SOURCE
+	fi
+	
+	# SRC: read access?
+	if ! [[ -r "$SRC" ]]; then
+		echo "NOT READABLE!"
+		return $RC_ERR_SOURCE
+	fi
+
+	echo "'$SRC'"
+	TRACK_NAME="$(basename "$SRC")"
+	TRACK_PATH="$(dirname "$(readlink -f "$SRC")")"
+	
+	# Custom Destination (optional)
+	if [[ -n "$DST" ]]; then
+		DST="$(realpath "$DST")"
+		mkdir -p "$DST"
+		
+		[[ -d "$DST" && -w "$DST" ]] || return $RC_ERR_OUTPUT
+		FLAC="$DST/${TRACK_NAME%.*}.flac"
+	else
+		FLAC="$TRACK_PATH/${TRACK_NAME%.*}_ENCODE.flac"
+	fi
+	echo " -> DST: '$FLAC'"
+	echo -n " -> STATUS: "
+	
+	# Abort if FLAC exists
+	if stat "$FLAC" &> /dev/null ; then
+		echo -e "ENCODE EXISTS\n"
+		return $RC_ERR_OUTPUT
+	fi
+	
+	# Detect original sample format
+	# see: https://ffmpeg.org/doxygen/7.0/group__lavu__sampfmts.html
+	SAMPLE_FMT=$(ffprobe -v error -select_streams a:0 \
+		-show_entries stream=sample_fmt \
+		-of default=nokey=1:noprint_wrappers=1 "$SRC")
+	
+	PCM_FMT=""
+	case "$SAMPLE_FMT" in
+		s16) PCM_FMT=pcm_s16le ;;
+		s24) PCM_FMT=pcm_s24le ;;
+		s32) PCM_FMT=pcm_s32le ;;
+		flt|fltp) PCM_FMT=pcm_s24le ;; # float-packed, float-planar
+		dbl|dblp) PCM_FMT=pcm_s32le ;; # double-packed, double-planar
+		*) PCM_FMT=pcm_s16le ;;
+	esac
+	
+	# SRC -> PCM -> FLAC
+	ffmpeg -loglevel -8 -n -i "$SRC" \
+		-af 'aformat=channel_layouts=mono|stereo|5.1|6.1|7.1' \
+		-c:a "$PCM_FMT" -f wav - \
+	| flac --best --blocksize=4096 --verify -o "$FLAC" - &>/dev/null
+	ENC_RC=$?
+	
+	T_ELAPSED=$(( $(date +%s) - $T_START ))
+	
+	if (( $ENC_RC )); then
+		echo -e "FAIL ($T_ELAPSED seconds)\n"
+		return $RC_ERR_ENCODE
+	else
+		echo -e "OK ($T_ELAPSED seconds)\n"
+	fi
+	
+	# Padding, Seektable
+	metaflac --remove-all --dont-use-padding "$FLAC"
+	metaflac --add-seekpoint=2s "$FLAC"
+	metaflac --merge-padding "$FLAC"
+	metaflac --sort-padding "$FLAC"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
-	
-	# Accept passed argument as
-	# an input directory.
-	if [[ -z "$1" ]]; then
-		IN_DIR="$PWD/input"
-	else
-		IN_DIR="$1"
-	fi
-	
-	echo ">>> Lossless Audio Encoding Script"
-	echo " * input root: '$IN_DIR'"
-	if ! [[ -d "$IN_DIR" && -r "$IN_DIR" ]]; then
-		echo "EXIT, NO ACCESS TO INPUT ROOT!"
-		exit
-	fi
-	
-	# Pass subdirectories in input root
-	# for processing via script.
-	for DIR in "$IN_DIR"/*; do
-		[[ -d "$DIR" ]] || continue
-		encode_lossless_audio "$DIR"
-	done
+	encode_track_to_flac "$1" "$2"
 fi
 ```
 
-To support multi-disc releases and an album structure where each disc is a nested directory
-inside the album root, you'd have to modify the script to use find or fd-find or some such tool
-and slightly change the parsing. What I wrote is just a quick and dirty way to get the job done.
+You're free to choose how to invoke the script, but a simple batch example could be achieved
+with either `find` or `fd` (e.g. fd-find) to run the script for each extension matched file, like so:
+
+```bash
+# Find all 'flac' and 'wav' files,
+# and pass the filepath as first argument,
+# and output to current dir '.' (second argument).
+$ fd -e flac -e wav -x ./encode_track.sh "{}" .
+
+[EncodeFlac]: './14. Twisted Force.flac'
+ -> DST: '/home/user/local/music/enc/14. Twisted Force.flac'
+ -> STATUS: ENCODE EXISTS
+
+[EncodeFlac]: './29. Bard Dance.flac'
+ -> DST: '/home/user/local/music/enc/29. Bard Dance.flac'
+ -> STATUS: ENCODE EXISTS
+
+[ ... ]
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/43. The Power (Credits Song).flac'
+ -> DST: '/home/user/local/music/enc/43. The Power (Credits Song).flac'
+ -> STATUS: ENCODE EXISTS
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/16. Last Light.flac'
+ -> DST: '/home/user/local/music/enc/16. Last Light.flac'
+ -> STATUS: ENCODE EXISTS
+
+[EncodeFlac]: './37. The Grand Design (Requiem).flac'
+ -> DST: '/home/user/local/music/enc/37. The Grand Design (Requiem).flac'
+ -> STATUS: ENCODE EXISTS
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/02. Main Theme Part II.flac'
+ -> DST: '/home/user/local/music/enc/02. Main Theme Part II.flac'
+ -> STATUS: OK (1 seconds)
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/08. Harpy Song.flac'
+ -> DST: '/home/user/local/music/enc/08. Harpy Song.flac'
+ -> STATUS: OK (1 seconds)
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/04. Who Are You.flac'
+ -> DST: '/home/user/local/music/enc/04. Who Are You.flac'
+ -> STATUS: OK (2 seconds)
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/01. Main Theme Part I.flac'
+ -> DST: '/home/user/local/music/enc/01. Main Theme Part I.flac'
+ -> STATUS: OK (2 seconds)
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/10. Cunning Cruel Crits.flac'
+ -> DST: '/home/user/local/music/enc/10. Cunning Cruel Crits.flac'
+ -> STATUS: OK (2 seconds)
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/09. Weeping Dawn.flac'
+ -> DST: '/home/user/local/music/enc/09. Weeping Dawn.flac'
+ -> STATUS: OK (2 seconds)
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/07. Lead Your Fights.flac'
+ -> DST: '/home/user/local/music/enc/07. Lead Your Fights.flac'
+ -> STATUS: OK (2 seconds)
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/03. Mind Flayer Theme.flac'
+ -> DST: '/home/user/local/music/enc/03. Mind Flayer Theme.flac'
+ -> STATUS: OK (2 seconds)
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/11. The Cult Of The Absolute.flac'
+ -> DST: '/home/user/local/music/enc/11. The Cult Of The Absolute.flac'
+ -> STATUS: OK (2 seconds)
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/12. Sixteen Strikes.flac'
+ -> DST: '/home/user/local/music/enc/12. Sixteen Strikes.flac'
+ -> STATUS: OK (2 seconds)
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/06. Quest For A Cure.flac'
+ -> DST: '/home/user/local/music/enc/06. Quest For A Cure.flac'
+ -> STATUS: OK (2 seconds)
+
+[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/05. Nine Blades.flac'
+ -> DST: '/home/user/local/music/enc/05. Nine Blades.flac'
+ -> STATUS: OK (2 seconds)
+```
+
+The script will output either "OK (time elapsed)" or "FAIL (time elapsed)", depending on
+if the encode process returns anything other than 0 (success). In the event that the DST FLAC
+exists already, the status will say "ENCODE EXISTS" like in the above output.
 
 That's all.
