@@ -6,5 +6,9 @@
 // Components
 @import "meta/single";
 @import "meta/content";
-@import "preview-small";
-@import "preview-big";
+
+@import "nav";
+
+@import "content/list-small";
+@import "content/list-big";
+@import "content/list-latest";

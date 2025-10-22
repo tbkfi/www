@@ -1,5 +1,6 @@
 // PARTIAL: page/list.html
 
-article.list > section.meta > ul.tags {
+article.list > section.meta > * {
+    text-align: center;
 	justify-content: center;
 }

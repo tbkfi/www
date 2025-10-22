@@ -3,12 +3,13 @@
 {{ partial "head.html" . }}
 <body>
 	{{ partial "header.html" . }}
+	{{ partial "nav.html" . }}
 	<main>
 		<div id="container">
 			<article class="list">
 				{{ partial "tagcloud.html" . }}
 				<hr>
-				{{ partial "preview-small.html" . }}
+				{{ partial "content/list-small.html" . }}
 			</article>
 		</div>
 	</main>

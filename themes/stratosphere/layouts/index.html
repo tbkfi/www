@@ -3,14 +3,17 @@
 {{ partial "head.html" . }}
 <body>
 	{{ partial "header.html" . }}
+	{{ partial "nav.html" . }}
 	<main>
 		<div id="container">
 			<article class="index">
 				</section>
-				<!-- {{ partial "meta-status.html" . }} -->
-				{{ partial "preview-big.html" (dict "context" . "section" "post") }}
-				{{ partial "preview-big.html" (dict "context" . "section" "note") }}
-				{{ partial "preview-big.html" (dict "context" . "section" "log") }}
+				{{ partial "meta/intro.html" . }}
+				{{ partial "content/list-latest.html" . }}
+				<hr>
+				{{ partial "content/list-big.html" (dict "context" . "section" "post" "num_preview" 5) }}
+				{{ partial "content/list-big.html" (dict "context" . "section" "note" "num_preview" 5) }}
+				{{ partial "content/list-big.html" (dict "context" . "section" "log" "num_preview" 5) }}
 			</article>
 		</div>
 	</main>
