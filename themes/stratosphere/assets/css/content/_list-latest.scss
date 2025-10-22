@@ -1,0 +1,106 @@
+section.content.latest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 0;
+    margin: 0;
+}
+section.content.latest > h1 {
+    font-size: var(--font-h6-size);
+    margin: 0;
+}
+section.content.latest > p {
+    font-size: var(--font-p-size);
+    margin: 0;
+}
+
+section.content.latest > ul.entries {
+    margin: 0;
+    padding: 0;
+
+    max-width: 90%;
+    background-color: transparent;
+}
+
+section.content.latest > ul.entries * {
+    font-family: FontPrimary;
+    font-size: var(--font-p-size);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+// Entries: Box
+section.content.latest > ul.entries > li {
+    padding: calc(var(--spacing-s)*0.5);
+}
+
+// Entries: Anchor
+section.content.latest > ul.entries > li > a.entry {
+    display: block;
+
+    background-color: var(--clr-white-dark);
+	border-radius: calc(var(--spacing-s)*0.5);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+	transition: box-shadow 0.5s ease;
+}
+section.content.latest > ul.entries > li > a.entry:hover {
+    box-shadow: 0 0 0 0.15em var(--clr-accent-red);
+	transition: box-shadow 0.05s ease;
+}
+
+section.content.latest > ul.entries > li > a.entry > .meta {
+    display: flex;
+    flex-direction: row;
+}
+section.content.latest > ul.entries > li > a.entry > .meta * {
+    padding: calc(var(--spacing-s)*0.5);
+}
+
+// Section-tag defaults
+section.content.latest > ul.entries > li > a.entry > .meta > .section {
+    width: var(--spacing-l);
+    flex-shrink: 0;
+    
+    text-align: center;
+    color: var(--clr-white);
+    
+    margin-left: var(--spacing-s);
+}
+section.content.latest > ul.entries > li > a.entry > .meta > .date {
+    flex-shrink: 0;
+    
+    text-align: center;
+    color: var(--clr-black);
+    
+    margin: 0 var(--spacing-s);
+}
+
+// Title-tag
+section.content.latest > ul.entries > li > a.entry > .meta > .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Section-tag Overrides
+section.content.latest > ul.entries > li > a.entry > .meta > .notice {
+    color: var(--clr-black);
+    background-color: var(--clr-accent-yellow);
+}
+section.content.latest > ul.entries > li > a.entry > .meta > .post {
+    background-color: var(--clr-accent-blue);
+}
+section.content.latest > ul.entries > li > a.entry > .meta > .note {
+    background-color: var(--clr-accent-red);
+}
+section.content.latest > ul.entries > li > a.entry > .meta > .log {
+    background-color: var(--clr-accent-purple);
+}

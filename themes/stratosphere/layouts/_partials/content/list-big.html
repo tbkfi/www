@@ -1,0 +1,45 @@
+<!-- Large Content List -->
+
+{{ $ctx := .context }}
+{{ $section := .section }}
+{{ $num_preview := .num_preview }}
+
+{{ $target := printf "desc_%s" $section }}
+{{ $desc := index $ctx.Site.Params $target }}
+
+<section class="content big {{ $section }}">
+	<a class="header" href="/{{ $section }}/">
+		<h1 class="title">{{ title $section | upper }}</h1>
+		<h2 class="description">{{ $desc }}</h2>
+	</a>
+	<ul class="entries">
+	{{ range first $num_preview (where $ctx.Site.RegularPages "Section" $section) }}
+		<li class="entry {{ $section }}">
+			<div class="header">
+				<ul class="meta">
+					<li class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+					<li class="date">
+						{{ .Date.Format "2006-01-02" }} @ 
+						<a class="section {{ $section }}" href="/{{ $section }}/">{{ $section | upper }}</a>
+						<span class="emoji">{{ .Params.emoji }}</span>
+					</li>
+					<li class="taxonomy">
+						{{ partial "tags.html" . }}
+					</li>
+				</ul>
+				<a class="banner" href="{{ .Permalink }}">
+					{{ partial "media-banner.html" . }}
+				</a>
+			</div>
+			<hr>
+			<ul>
+				<li class="description">{{ .Summary | truncate 220 }}</li>
+				{{ if .Truncated }}
+				<li class="link"><a href="{{ .Permalink }}">Continue reading ...</a></li>
+				{{ end }}
+			</ul>
+		</li>
+	{{ end }}
+	</ul>
+	<a class="end {{ $section }}" href="/{{ $section }}/">MORE {{ $section | upper }}S</a>
+</section>

@@ -1,0 +1,9 @@
+<div class="menu">
+	<div>
+		<nav class="links">
+			{{ range .Site.Sections }}
+			<a class="{{ .Title }}" href="{{ .Permalink }}">{{ .Title }}</a>
+			{{ end }}
+		</nav>
+	</div>
+</div>

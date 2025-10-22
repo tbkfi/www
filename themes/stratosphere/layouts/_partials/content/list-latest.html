@@ -1,0 +1,22 @@
+<!-- Latest Content List -->
+
+<section class="content latest">
+	<h1>Latest Summary</h1>
+	<p><em>Currently previewing the ten latest pages</em></p>
+	<ul class="entries">
+		{{ range first 10 .Site.RegularPages }}
+		<li>
+			<a class="entry" href="{{ .Permalink }}">
+				<span class="meta">
+					<span class="section {{ .Section }}">{{ .Section | upper }}</span>
+					<span class="date">{{ .Date.Format "2006-01-02" }}</span>
+					{{ if .Params.emoji }}
+					<span class="emoji">{{ .Params.emoji }}</span>
+					{{ end }}
+					<span class="title" >{{ .Title }}</span>
+				</span>
+			</a>
+		</li>
+		{{ end }}
+	</ul>
+</section>

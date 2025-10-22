@@ -1,0 +1,44 @@
+.menu * {
+    margin: 0;
+    padding: 0;
+}
+.menu {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    padding: var(--spacing-s) 0;
+    margin-bottom: var(--spacing-m);
+    
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+}
+
+.menu > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu > div > .title {
+    color: var(--clr-white);
+    font-size: var(--font-h6-size);
+}
+
+.menu > div > .links {
+    display: flex;
+    
+    flex-direction: row;
+    justify-content: space-around;
+    
+    width: 100%;
+}
+
+.menu > div > .links > a {
+    color: var(--clr-white);
+    font-size: var(--font-h6-size);
+}
+.menu > div > .links > a:hover {
+    color: var(--clr-accent-red);
+}

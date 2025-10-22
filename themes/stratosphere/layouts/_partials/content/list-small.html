@@ -1,0 +1,20 @@
+<!-- Compact Content List -->
+
+<section class="content small">
+	<ul class="entries">
+		{{ range .Pages }}
+		<li>
+			<a class="entry" href="{{ .Permalink }}">
+				<span class="meta">
+					<span class="section {{ .Section }}">{{ .Section | upper }}</span>
+					<span class="date">{{ .Date.Format "2006-01-02" }}</span>
+					{{ if .Params.emoji }}
+					<span class="emoji">{{ .Params.emoji }}</span>
+					{{ end }}
+					<span class="title" >{{ .Title }}</span>
+				</span>
+			</a>
+		</li>
+		{{ end }}
+	</ul>
+</section>
