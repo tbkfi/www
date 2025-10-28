@@ -1,0 +1,64 @@
+// General
+.sticky {
+    position: sticky !important;
+    top: 0;
+}
+
+// Hover effects
+.hover-clear:hover {
+    color: transparent !important;
+}
+
+.hover-underline-light:hover {
+    color: transparent !important;
+    border-bottom: 0.10em solid var(--clr-white) !important;
+}
+.hover-underline-dark:hover {
+    color: transparent !important;
+    border-bottom: 0.10em solid var(--clr-black) !important;
+}
+
+.hover-ease-panel {
+    transition: background-color 0.50s ease !important;
+}
+.hover-ease-panel:hover {
+    background-color: var(--clr-black) !important;
+    transition: background-color 0.15s ease !important;
+}
+
+.hover-ease-border {
+	transition: box-shadow 0.25s ease !important;
+}
+.hover-ease-border:hover {
+    box-shadow: 0 0 0 0.20em var(--clr-accent-red) !important;
+	transition: box-shadow 0.10s ease !important;
+}
+
+// SFX
+.txt-glow-warm {
+    background: linear-gradient( -90deg, var(--clr-accent-red), DarkOrange, var(--clr-accent-red)) 0 0 / 400% 100%;
+    color: transparent;
+    background-clip: text;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .txt-glow-warm {
+        animation: move-bg 20s linear infinite;
+    }
+    @keyframes move-bg {
+        to { background-position: 400% 0; }
+    }
+}
+
+.txt-glow-cold {
+    background: linear-gradient( -90deg, var(--clr-accent-blue), DeepSkyBlue, var(--clr-accent-blue)) 0 0 / 400% 100%;
+    color: transparent;
+    background-clip: text;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .txt-glow-cold {
+        animation: move-bg 20s linear infinite;
+    }
+    @keyframes move-bg {
+        to { background-position: 400% 0; }
+    }
+}

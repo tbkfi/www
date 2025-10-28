@@ -15,6 +15,7 @@ section.meta-single {
 
 section.meta-single > .title {
     font-size: var(--font-h1-size);
+    text-align: center;
 }
 section.meta-single > .time {
     font-size: var(--font-h4-size);
@@ -25,10 +26,6 @@ section.meta-single > .section {
     color: white;
 
     margin-bottom: var(--spacing-m);
-}
-section.meta-single > .section > a:hover {
-    //color: transparent;
-    //text-decoration: underline;
 }
 section.meta-single > .emoji {
     font-size: var(--font-h1-size);

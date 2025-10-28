@@ -1,9 +1,8 @@
-<div class="menu">
-	<div>
-		<nav class="links">
-			{{ range .Site.Sections }}
-			<a class="{{ .Title }}" href="{{ .Permalink }}">{{ .Title }}</a>
-			{{ end }}
-		</nav>
-	</div>
-</div>
+<nav class="menu sticky">
+	<a class="title txt-glow-warm hover-clear" href="{{ relURL "" }}">INDEX</a>
+	<ul class="links">
+		{{ range .Site.Sections }}
+		<li><a class="{{ .Title }} txt-glow-cold hover-underline-light" href="{{ .Permalink }}">{{ .Title | upper }}</a></li>
+		{{ end }}
+	</ul>
+</nav>

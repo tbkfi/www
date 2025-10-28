@@ -39,10 +39,6 @@ section.content.big > a.header > .description {
     font-weight: 600;
 	color: var(--clr-white);
 }
-section.content.big > a.header:hover {
-	background-color: var(--clr-black);
-	transition: background-color 0.2s ease;
-}
 // Section header colours
 section.content.big.post > a {
 	background-color: var(--clr-accent-blue);
@@ -102,9 +98,6 @@ section.content.big > ul.entries > li.entry > div.header > ul.meta > li.title > 
     font-size: var(--font-h3-size);
     font-weight: 600;
 	color: var(--clr-black);
-}
-section.content.big > ul.entries > li.entry > div.header > ul.meta > li.title > a:hover {
-    color: var(--clr-accent-red);
 }
 section.content.big > ul.entries > li.entry > div.header > ul.meta > li.date {
     font-size: var(--font-h6-size);
@@ -170,11 +163,6 @@ section.content.big > ul.entries > li.entry > div.header > a.banner > figure > p
 
     border-radius: var(--radius-s);
 }
-section.content.big > ul.entries > li.entry > div.header > a.banner:hover {
-    box-shadow: 0 0 0 0.25em var(--clr-accent-red);
-    border-radius: var(--radius-s);
-	transition: box-shadow 0.05s ease;
-}
 
 section.content.big > ul.entries > li.entry > ul > li.description {
     padding-top: var(--spacing-s);
@@ -204,7 +192,6 @@ section.content.big > a.end {
     padding: var(--spacing-s) var(--spacing-m);
 
     border-radius: var(--radius-s);
-	transition: background-color 0.25s ease;
 }
 
 section.content.big > a.end.post {
@@ -218,11 +205,6 @@ section.content.big > a.end.log {
 }
 section.content.big > a.end.notice {
     background-color: var(--clr-accent-yellow);
-}
-
-section.content.big > a.end:hover {
-    background-color: var(--clr-black);
-	transition: background-color 0.15s ease;
 }
 
 @media (max-width: 850px) {

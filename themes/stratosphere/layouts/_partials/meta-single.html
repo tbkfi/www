@@ -4,7 +4,7 @@
 	<h1 class="title">{{ .Title }}</h1>
 	<h2 class="time">{{ .Date.Format "2006-01-02" }} @ {{ .ReadingTime }} minute(s)</h2>
 	<h3 class="section">
-		<a class="txt-glow-warm" href="{{ .CurrentSection.RelPermalink }}">{{ .CurrentSection.Title | lower }}</a>
+		<a class="txt-glow-warm hover-underline-dark" href="{{ .CurrentSection.RelPermalink }}">{{ .CurrentSection.Title | lower }}</a>
 	</h3>
 	{{ if .Params.emoji }}
 	<h2 class="emoji">{{ .Params.emoji }}</h2>

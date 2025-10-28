@@ -4,7 +4,7 @@
 	<ul class="entries">
 		{{ range .Pages }}
 		<li>
-			<a class="entry" href="{{ .Permalink }}">
+			<a class="entry hover-ease-border" href="{{ .Permalink }}">
 				<span class="meta">
 					<span class="section {{ .Section }}">{{ .Section | upper }}</span>
 					<span class="date">{{ .Date.Format "2006-01-02" }}</span>

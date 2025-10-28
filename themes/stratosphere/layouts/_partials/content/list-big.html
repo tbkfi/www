@@ -8,7 +8,7 @@
 {{ $desc := index $ctx.Site.Params $target }}
 
 <section class="content big {{ $section }}">
-	<a class="header" href="/{{ $section }}/">
+	<a class="header hover-ease-panel" href="/{{ $section }}/">
 		<h1 class="title">{{ title $section | upper }}</h1>
 		<h2 class="description">{{ $desc }}</h2>
 	</a>
@@ -17,7 +17,7 @@
 		<li class="entry {{ $section }}">
 			<div class="header">
 				<ul class="meta">
-					<li class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+					<li class="title"><a class="hover-underline-dark" href="{{ .Permalink }}">{{ .Title }}</a></li>
 					<li class="date">
 						{{ .Date.Format "2006-01-02" }} @ 
 						<a class="section {{ $section }}" href="/{{ $section }}/">{{ $section | upper }}</a>
@@ -27,7 +27,7 @@
 						{{ partial "tags.html" . }}
 					</li>
 				</ul>
-				<a class="banner" href="{{ .Permalink }}">
+				<a class="banner hover-ease-border" href="{{ .Permalink }}">
 					{{ partial "media-banner.html" . }}
 				</a>
 			</div>
@@ -41,5 +41,5 @@
 		</li>
 	{{ end }}
 	</ul>
-	<a class="end {{ $section }}" href="/{{ $section }}/">MORE {{ $section | upper }}S</a>
+	<a class="end {{ $section }} hover-ease-panel" href="/{{ $section }}/">MORE {{ $section | upper }}S</a>
 </section>

@@ -28,12 +28,6 @@ footer > section.meta-links > ul > li > a {
     border-radius: var(--radius-s);
 
     padding: 0.50em;
-
-	transition: box-shadow 0.50s ease;
-}
-footer > section.meta-links > ul > li > a:hover {
-	transition: box-shadow 0.05s ease;
-    box-shadow: 0 0 0 0.20em var(--clr-accent-red);
 }
 footer > section.meta-links > ul > li > a > img {
     width: var(--spacing-l);
