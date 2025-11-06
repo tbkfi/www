@@ -9,4 +9,4 @@ tags = ["book", "textbook", "programming", "cxx" ]
 draft = false
 +++
 
-Currently reading ...
+Partially read on 2025.10.24, rotated to reference and backlog due to time constraints.
