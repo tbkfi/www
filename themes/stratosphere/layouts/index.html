@@ -7,10 +7,9 @@
 	<main>
 		<div id="container">
 			<article class="index">
-				</section>
-				{{ partial "meta/intro.html" . }}
+				<!--{{ partial "meta/intro.html" . }}
 				{{ partial "content/list-latest.html" . }}
-				<hr>
+				<hr>-->
 				{{ partial "content/list-big.html" (dict "context" . "section" "post" "num_preview" 5) }}
 				{{ partial "content/list-big.html" (dict "context" . "section" "note" "num_preview" 5) }}
 				{{ partial "content/list-big.html" (dict "context" . "section" "log" "num_preview" 5) }}
