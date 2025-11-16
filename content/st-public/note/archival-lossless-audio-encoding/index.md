@@ -9,20 +9,23 @@ tags = ["archival", "encoding", "audio", "ffmpeg", "flac", "rsgain", "musicbrain
 draft = false
 +++
 
+*TLDR: [The encode script](https://github.com/tbkfi/dotfile/blob/main/src/user/bin/encode-flac).*
+
 Guess what. It's that time again when I get to clean up other people's subpar encoding jobs,
 so I figured I'd go over my old tooling, refresh the code, and document the process while I'm at it.
 
-Encoding audio (specially lossless) is much more simple than doing decent video filtering and encoding,
-so I'm really confused as to why this topic continues to give people such a hard time.
-But evidently it does, considering the amount of badly encoded and tagged files that are in circulation.
+Encoding lossless audio is much more simple than doing decent purpose specific lossy audio encoding -- not to mention video filtering and encoding,
+which are often associated. So I'm a little confused as to why this seemingly simple simple task continues to give people a hard time.
+The tools and libraries have existed (fundementally) unchanged for literally decades at this point, and they're well documented.
+Regardless, the amount of inefficiently encoded and illegally tagged files in circulation continue to cause problems.
 
-I store video game OSTs that I like on my media server, and often many of the track variants
-are only available in the game files, and never make it to official releases. So the
-only way to listen to the tracks aside from playing the game is to extract the audio
-from the game files, and to process them into an archivable format. Some generous people
+As an example, I like to store video game OSTs from games I've enjoyed on my media server.
+Often many of the track variants are only available in the game files, and never make it to official releases.
+Therefore the only official way to listen to the tracks again, aside from playing the game, is to extract the audio
+from the game files, and to process them into an archivable format for safekeeping. Some generous people
 spend a decent chunk of their time going through the trouble of doing this, but the output
-is often in questionable format, and use illegal metadata fields or encoding, and lacks loudness
-normalisation per track and album.
+is often weirdly formatted, uses illegal key and value fields in the embedded metadata, and lacks loudness
+normalisation per track and album. This can lead to issues in playback, browsing, or inspection of the tracks.
 
 ![Media library with archived video game soundtracks](library-ost.jpg)
 
@@ -818,27 +821,11 @@ $ fd -e flac -e wav -x ./encode_track.sh "{}" .
  -> DST: '/home/user/local/music/enc/14. Twisted Force.flac'
  -> STATUS: ENCODE EXISTS
 
-[EncodeFlac]: './29. Bard Dance.flac'
- -> DST: '/home/user/local/music/enc/29. Bard Dance.flac'
- -> STATUS: ENCODE EXISTS
-
 [ ... ]
 
 [EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/43. The Power (Credits Song).flac'
  -> DST: '/home/user/local/music/enc/43. The Power (Credits Song).flac'
  -> STATUS: ENCODE EXISTS
-
-[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/16. Last Light.flac'
- -> DST: '/home/user/local/music/enc/16. Last Light.flac'
- -> STATUS: ENCODE EXISTS
-
-[EncodeFlac]: './37. The Grand Design (Requiem).flac'
- -> DST: '/home/user/local/music/enc/37. The Grand Design (Requiem).flac'
- -> STATUS: ENCODE EXISTS
-
-[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/02. Main Theme Part II.flac'
- -> DST: '/home/user/local/music/enc/02. Main Theme Part II.flac'
- -> STATUS: OK (1 seconds)
 
 [EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/08. Harpy Song.flac'
  -> DST: '/home/user/local/music/enc/08. Harpy Song.flac'
@@ -852,37 +839,8 @@ $ fd -e flac -e wav -x ./encode_track.sh "{}" .
  -> DST: '/home/user/local/music/enc/01. Main Theme Part I.flac'
  -> STATUS: OK (2 seconds)
 
-[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/10. Cunning Cruel Crits.flac'
- -> DST: '/home/user/local/music/enc/10. Cunning Cruel Crits.flac'
- -> STATUS: OK (2 seconds)
+[ ... ]
 
-[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/09. Weeping Dawn.flac'
- -> DST: '/home/user/local/music/enc/09. Weeping Dawn.flac'
- -> STATUS: OK (2 seconds)
-
-[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/07. Lead Your Fights.flac'
- -> DST: '/home/user/local/music/enc/07. Lead Your Fights.flac'
- -> STATUS: OK (2 seconds)
-
-[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/03. Mind Flayer Theme.flac'
- -> DST: '/home/user/local/music/enc/03. Mind Flayer Theme.flac'
- -> STATUS: OK (2 seconds)
-
-[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/11. The Cult Of The Absolute.flac'
- -> DST: '/home/user/local/music/enc/11. The Cult Of The Absolute.flac'
- -> STATUS: OK (2 seconds)
-
-[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/12. Sixteen Strikes.flac'
- -> DST: '/home/user/local/music/enc/12. Sixteen Strikes.flac'
- -> STATUS: OK (2 seconds)
-
-[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/06. Quest For A Cure.flac'
- -> DST: '/home/user/local/music/enc/06. Quest For A Cure.flac'
- -> STATUS: OK (2 seconds)
-
-[EncodeFlac]: './Baldur's Gate 3 Original Soundtrack/05. Nine Blades.flac'
- -> DST: '/home/user/local/music/enc/05. Nine Blades.flac'
- -> STATUS: OK (2 seconds)
 ```
 
 The script will output either "OK (time elapsed)" or "FAIL (time elapsed)", depending on
