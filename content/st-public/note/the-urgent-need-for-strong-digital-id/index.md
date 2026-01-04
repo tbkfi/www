@@ -73,7 +73,7 @@ Here's a semi-recent EDRI case relating to the [CSA Regulation](https://edri.org
 permitted not only corrupt lobbying, but also enabled the redaction of the corrupt "expert group" actors from the initial documents --an attack against transparency and verifiability.
 Proving that the existing leadership is either corrupt or incompetent in part, but also uses existing mechanisms to protect those abusing the system for their own financial and authoritarian goals.
 
-![Abc](edri-comission-maladmin.png)
+![EDRI findings on maladministration in relation to CSA proposal](edri-comission-maladmin.png)
 
 As seen from above, repeated counts of consecutive maladministration appear to slip through all the time, and it seems to keep happening until someone points a finger and
 starts asking questions --highlighting the importance of transparency in the chain of actions. To put it bluntly, all the people responsible for those first rounds and
