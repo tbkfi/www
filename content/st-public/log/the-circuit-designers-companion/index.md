@@ -9,4 +9,4 @@ tags = ["book", "textbook", "electronics", "electronic circuit", "digital circui
 draft = false
 +++
 
-Currently reading ...
+Marked read on 2025.12.27
