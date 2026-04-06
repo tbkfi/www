@@ -1,6 +1,6 @@
 +++
 title = "Optimising Virtual Desktop Performance"
-date = 2026-03-25
+date = 2026-04-06
 
 emoji = ""
 banner_c = "Proxmox VM Dashboard metrics for the Virtual Desktop"
