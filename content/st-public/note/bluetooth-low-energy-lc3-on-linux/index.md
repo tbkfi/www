@@ -213,3 +213,25 @@ for sound and microphone would've also been very welcome.
 Somewhat reassuringly(?), the state of all Bluetooth headphones appear to be, frankly, shit. So it's not like I'm
 alone in facing this issue. Apparently most Bluetooth headphones have awful latencies, and issues exists even under Windows and OSX.
 Meaning that Linux isn't the only one struggling to support a four year old standard that is going to be obsolete by the time it becomes usable...
+
+### What about a dongle?
+
+As a last ditch effort, I bought a bluetooth audio dongle (Sennheiser BTD 700), as it claims
+support for LC3 over LE, but I was unable to pair the transceiver with my XM6 over LE. I would
+only get some very distinctly ass-sounding SBC from them despite trying everything.
+
+Sennheiser's application is also only available on Windows and OSX, which is just lovely.
+I guess it's fitting that the application is so broken. The "Update" tab would only return
+a broken jumble of html code instead of a properly rendered response, and the "Dashboard"
+view would always crash when attempting to press one of the codec options. Straight back to returns...
+
+![Sennheiser's Dongle Control running in Windows](dongle-control.png)
+
+### Log dumps
+
+I've added some logs to this note just in case I want to revisit this issue at a later date.
+The logs haven't been cleaned for relevant details, and contain all sorts of nearby detail data
+as well mixed in.
+
+![bluetoothctl](bluetoothctl.log)
+![btmon](btmon.log)

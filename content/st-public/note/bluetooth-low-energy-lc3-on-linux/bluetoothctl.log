@@ -1,0 +1,373 @@
+[bluetoothctl]> pair 49:DE:A1:96:8F:1C
+Attempting to pair with 49:DE:A1:96:8F:1C
+[CHG] Device 49:DE:A1:96:8F:1C Connected: yes
+[CHG] LE 49:DE:A1:96:8F:1C Connected: yes
+[NEW] Primary Service (Handle 0x0001)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0001
+	00001800-0000-1000-8000-00805f9b34fb
+	Generic Access Profile
+[NEW] Characteristic (Handle 0x0002)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0001/char0002
+	00002a00-0000-1000-8000-00805f9b34fb
+	Device Name
+[NEW] Characteristic (Handle 0x0004)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0001/char0004
+	00002a01-0000-1000-8000-00805f9b34fb
+	Appearance
+[NEW] Primary Service (Handle 0x0011)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0011
+	00001801-0000-1000-8000-00805f9b34fb
+	Generic Attribute Profile
+[NEW] Characteristic (Handle 0x0012)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0011/char0012
+	00002a05-0000-1000-8000-00805f9b34fb
+	Service Changed
+[NEW] Descriptor (Handle 0x0014)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0011/char0012/desc0014
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Descriptor (Handle 0x0015)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0011/char0012/desc0015
+	00002903-0000-1000-8000-00805f9b34fb
+	Server Characteristic Configuration
+[NEW] Characteristic (Handle 0x0016)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0011/char0016
+	00002b29-0000-1000-8000-00805f9b34fb
+	Client Supported Features
+[NEW] Characteristic (Handle 0x0018)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0011/char0018
+	00002b3a-0000-1000-8000-00805f9b34fb
+	Server Supported Features
+[NEW] Characteristic (Handle 0x001a)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0011/char001a
+	00002b2a-0000-1000-8000-00805f9b34fb
+	Database Hash
+[NEW] Primary Service (Handle 0x002d)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service002d
+	11c8b310-80e4-4276-afc0-f81590b2177f
+	Vendor specific
+[NEW] Characteristic (Handle 0x002e)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service002d/char002e
+	00002b01-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Descriptor (Handle 0x0030)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service002d/char002e/desc0030
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x0035)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0035
+	28bc862f-87d2-457b-b45a-5c838c4a66ff
+	Vendor specific
+[NEW] Characteristic (Handle 0x0036)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0035/char0036
+	d614da49-46db-4edb-8cea-62d6435f3156
+	Vendor specific
+[NEW] Descriptor (Handle 0x0038)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0035/char0036/desc0038
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x003d)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service003d
+	5b833e27-6bc7-4802-8e9a-723ceca4bd8f
+	Vendor specific
+[NEW] Characteristic (Handle 0x003e)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service003d/char003e
+	5b833c68-6bc7-4802-8e9a-723ceca4bd8f
+	Vendor specific
+[NEW] Primary Service (Handle 0x0040)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0040
+	5b833e06-6bc7-4802-8e9a-723ceca4bd8f
+	Vendor specific
+[NEW] Characteristic (Handle 0x0041)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0040/char0041
+	5b833c10-6bc7-4802-8e9a-723ceca4bd8f
+	Vendor specific
+[NEW] Characteristic (Handle 0x0043)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0040/char0043
+	5b833c12-6bc7-4802-8e9a-723ceca4bd8f
+	Vendor specific
+[NEW] Descriptor (Handle 0x0045)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0040/char0043/desc0045
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x0051)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0051
+	dc405470-a351-4a59-97d8-2e2e3b207fbb
+	Vendor specific
+[NEW] Characteristic (Handle 0x0052)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0051/char0052
+	bfd869fa-a3f2-4c2f-bcff-3eb1ec80cead
+	Vendor specific
+[NEW] Characteristic (Handle 0x0054)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0051/char0054
+	2a6b6575-faf6-418c-923f-ccd63a56d955
+	Vendor specific
+[NEW] Descriptor (Handle 0x0056)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0051/char0054/desc0056
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x0080)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0080
+	0000180a-0000-1000-8000-00805f9b34fb
+	Device Information
+[NEW] Characteristic (Handle 0x0081)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0080/char0081
+	00002a24-0000-1000-8000-00805f9b34fb
+	Model Number String
+[NEW] Characteristic (Handle 0x0083)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0080/char0083
+	00002a26-0000-1000-8000-00805f9b34fb
+	Firmware Revision String
+[NEW] Characteristic (Handle 0x0085)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0080/char0085
+	00002a28-0000-1000-8000-00805f9b34fb
+	Software Revision String
+[NEW] Characteristic (Handle 0x0087)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0080/char0087
+	00002a29-0000-1000-8000-00805f9b34fb
+	Manufacturer Name String
+[NEW] Characteristic (Handle 0x0089)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0080/char0089
+	00002a50-0000-1000-8000-00805f9b34fb
+	PnP ID
+[NEW] Primary Service (Handle 0x00e0)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service00e0
+	45c93e07-d90d-4b93-a9db-91e5dd734e35
+	Vendor specific
+[NEW] Characteristic (Handle 0x00e1)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service00e0/char00e1
+	45c93c15-d90d-4b93-a9db-91e5dd734e35
+	Vendor specific
+[NEW] Characteristic (Handle 0x00e3)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service00e0/char00e3
+	45c93c16-d90d-4b93-a9db-91e5dd734e35
+	Vendor specific
+[NEW] Descriptor (Handle 0x00e5)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service00e0/char00e3/desc00e5
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x00e6)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service00e0/char00e6
+	45c93c17-d90d-4b93-a9db-91e5dd734e35
+	Vendor specific
+[NEW] Descriptor (Handle 0x00e8)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service00e0/char00e6/desc00e8
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x00f0)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service00f0
+	76c13020-fe8f-416a-b4c3-ee59d3ef95dc
+	Vendor specific
+[NEW] Characteristic (Handle 0x00f1)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service00f0/char00f1
+	76c13021-fe8f-416a-b4c3-ee59d3ef95dc
+	Vendor specific
+[NEW] Characteristic (Handle 0x00f3)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service00f0/char00f3
+	76c13022-fe8f-416a-b4c3-ee59d3ef95dc
+	Vendor specific
+[NEW] Primary Service (Handle 0x0100)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100
+	0000fe2c-0000-1000-8000-00805f9b34fb
+	Google
+[NEW] Characteristic (Handle 0x0101)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100/char0101
+	fe2c1233-8366-4814-8eb0-01de32100bea
+	Vendor specific
+[NEW] Characteristic (Handle 0x0103)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100/char0103
+	fe2c1234-8366-4814-8eb0-01de32100bea
+	Vendor specific
+[NEW] Descriptor (Handle 0x0105)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100/char0103/desc0105
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x0106)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100/char0106
+	fe2c1235-8366-4814-8eb0-01de32100bea
+	Vendor specific
+[NEW] Descriptor (Handle 0x0108)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100/char0106/desc0108
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x0109)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100/char0109
+	fe2c1236-8366-4814-8eb0-01de32100bea
+	Vendor specific
+[NEW] Characteristic (Handle 0x010b)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100/char010b
+	fe2c123b-8366-4814-8eb0-01de32100bea
+	Vendor specific
+[NEW] Descriptor (Handle 0x010d)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100/char010b/desc010d
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x010e)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100/char010e
+	fe2c1239-8366-4814-8eb0-01de32100bea
+	Vendor specific
+[NEW] Characteristic (Handle 0x0110)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100/char0110
+	fe2c123a-8366-4814-8eb0-01de32100bea
+	Vendor specific
+[NEW] Descriptor (Handle 0x0112)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100/char0110/desc0112
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x0113)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100/char0113
+	fe2c1238-8366-4814-8eb0-01de32100bea
+	Vendor specific
+[NEW] Descriptor (Handle 0x0115)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0100/char0113/desc0115
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x0120)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0120
+	5b833e26-6bc7-4802-8e9a-723ceca4bd8f
+	Vendor specific
+[NEW] Characteristic (Handle 0x0121)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0120/char0121
+	5b833c11-6bc7-4802-8e9a-723ceca4bd8f
+	Vendor specific
+[NEW] Characteristic (Handle 0x0123)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0120/char0123
+	5b833c13-6bc7-4802-8e9a-723ceca4bd8f
+	Vendor specific
+[NEW] Descriptor (Handle 0x0125)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0120/char0123/desc0125
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x0126)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0120/char0126
+	5b833c1b-6bc7-4802-8e9a-723ceca4bd8f
+	Vendor specific
+[NEW] Descriptor (Handle 0x0128)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0120/char0126/desc0128
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x0129)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0120/char0129
+	5b833c1c-6bc7-4802-8e9a-723ceca4bd8f
+	Vendor specific
+[NEW] Primary Service (Handle 0x0140)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140
+	f76acb00-7cab-495f-bb1a-e664598fd77f
+	Vendor specific
+[NEW] Characteristic (Handle 0x0141)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char0141
+	f76acb01-7cab-495f-bb1a-e664598fd77f
+	Vendor specific
+[NEW] Characteristic (Handle 0x0143)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char0143
+	f76acb02-7cab-495f-bb1a-e664598fd77f
+	Vendor specific
+[NEW] Descriptor (Handle 0x0145)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char0143/desc0145
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x0146)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char0146
+	f76acb03-7cab-495f-bb1a-e664598fd77f
+	Vendor specific
+[NEW] Descriptor (Handle 0x0148)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char0146/desc0148
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x0149)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char0149
+	f76acb04-7cab-495f-bb1a-e664598fd77f
+	Vendor specific
+[NEW] Characteristic (Handle 0x014b)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char014b
+	f76acb05-7cab-495f-bb1a-e664598fd77f
+	Vendor specific
+[NEW] Descriptor (Handle 0x014d)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char014b/desc014d
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x014e)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char014e
+	f76acb06-7cab-495f-bb1a-e664598fd77f
+	Vendor specific
+[NEW] Descriptor (Handle 0x0150)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char014e/desc0150
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x0151)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char0151
+	f76acb07-7cab-495f-bb1a-e664598fd77f
+	Vendor specific
+[NEW] Characteristic (Handle 0x0153)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char0153
+	f76acb08-7cab-495f-bb1a-e664598fd77f
+	Vendor specific
+[NEW] Descriptor (Handle 0x0155)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char0153/desc0155
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Characteristic (Handle 0x0156)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char0156
+	f76acb09-7cab-495f-bb1a-e664598fd77f
+	Vendor specific
+[NEW] Descriptor (Handle 0x0158)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0140/char0156/desc0158
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x0230)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0230
+	15190001-12f4-c226-88ed-2ac5579f2a85
+	Vendor specific
+[NEW] Characteristic (Handle 0x0231)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0230/char0231
+	8e0c0001-1d68-fb92-bf61-48377421680e
+	Vendor specific
+[NEW] Descriptor (Handle 0x0233)
+	/org/bluez/hci0/dev_49_DE_A1_96_8F_1C/service0230/char0231/desc0233
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[49-DE-A1-96-8F-1C]> info
+Device 49:DE:A1:96:8F:1C (random)
+	Name: LE_WH-1000XM6
+	Alias: LE_WH-1000XM6
+	Appearance: 0x0943 (2371)
+	Paired: no
+	Bonded: no
+	Trusted: no
+	Blocked: no
+	Connected: yes
+	LegacyPairing: no
+	CablePairing: no
+	UUID: Generic Access Profile    (00001800-0000-1000-8000-00805f9b34fb)
+	UUID: Generic Attribute Profile (00001801-0000-1000-8000-00805f9b34fb)
+	UUID: Device Information        (0000180a-0000-1000-8000-00805f9b34fb)
+	UUID: Sony Corporation          (0000fd82-0000-1000-8000-00805f9b34fb)
+	UUID: Google                    (0000fe2c-0000-1000-8000-00805f9b34fb)
+	UUID: Vendor specific           (11c8b310-80e4-4276-afc0-f81590b2177f)
+	UUID: Vendor specific           (15190001-12f4-c226-88ed-2ac5579f2a85)
+	UUID: Vendor specific           (28bc862f-87d2-457b-b45a-5c838c4a66ff)
+	UUID: Vendor specific           (45c93e07-d90d-4b93-a9db-91e5dd734e35)
+	UUID: Vendor specific           (5b833e06-6bc7-4802-8e9a-723ceca4bd8f)
+	UUID: Vendor specific           (5b833e26-6bc7-4802-8e9a-723ceca4bd8f)
+	UUID: Vendor specific           (5b833e27-6bc7-4802-8e9a-723ceca4bd8f)
+	UUID: Vendor specific           (76c13020-fe8f-416a-b4c3-ee59d3ef95dc)
+	UUID: Vendor specific           (dc405470-a351-4a59-97d8-2e2e3b207fbb)
+	UUID: Vendor specific           (f76acb00-7cab-495f-bb1a-e664598fd77f)
+	Modalias: usb:v054Cp0F8Ad0300
+	ManufacturerData.Key: 0x0006 (6)
+	ManufacturerData.Value:
+  03 01 80 8b 93 39 62 18 58 04 04 24 57 48 2d 31  .....9b.X..$WH-1
+  30 30 30 58 4d 36 00                             000XM6.         
+	ManufacturerData.Key: 0x012d (301)
+	ManufacturerData.Value:
+  04 00 02 02 b0 31 0b 01 d6 1d 59 d9 2f 00 22 00  .....1....Y./.".
+  33 23 00 00                                      3#..            
+	ManufacturerData.Key: 0x3727 (14119)
+	ManufacturerData.Value:
+  63 f3 f1 6d 53 cc                                c..mS.          
+	AdvertisingFlags:
+  00                                               .               
+	LE.Paired: no
+	LE.Bonded: no
+	LE.Connected: yes
+
