@@ -3,9 +3,9 @@ title = "Local File Transfer via Bluetooth"
 date = 2026-04-15
 
 emoji = ""
-banner_c = ""
+banner_c = "Receiving data via Obex on Linux machine."
 
-tags = ["linux", "bluetooth" ]
+tags = ["linux", "bluetooth", "bluez", "obex", "usability"]
 draft = false
 +++
 
