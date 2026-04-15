@@ -48,6 +48,7 @@ running continuously in the background.
 *Note: the flag `--root=""` indicates where any received file(s) are written to.*
 
 ```bash
+#!/bin/bash
 BIN_OBEX="/usr/libexec/bluetooth/obexd"
 
 if [[ -x $BIN_OBEX ]]; then
