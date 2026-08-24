@@ -3,9 +3,9 @@ title = "Arc Pro B70 on Linux"
 date = 2026-08-22
 
 emoji = ""
-banner_c = "Proxmox VM Dashboard metrics for the Virtual Desktop"
+banner_c = "Current Hypervisor setup and supporting infrastructure."
 
-tags = ["sysadmin", "proxmox", "virtualisation", "pcie-passthrough", "vfio", "xe", "intel", "arc pro", "b70", "virtual function", "ai", "llm", "llama.cpp" ]
+tags = ["sysadmin", "proxmox", "virtualisation", "pcie-passthrough", "vfio", "xe", "intel", "arc pro", "b70", "sr-iov", "virtual function", "ai", "llm", "llama.cpp" ]
 draft = false
 +++
 
