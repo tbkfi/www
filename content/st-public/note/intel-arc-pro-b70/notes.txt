@@ -1,0 +1,103 @@
+## PROXMOX STUFF
+# This junk has NOT been verified, and is the result of bumbling about on one weekend,
+# please. PLEASE. Go read the documentation yourself before you blow your stuff up or whatever.
+
+
+
+
+# ADDR, ID
+lspci -nn | grep -i "e223\|Arc Pro B70"
+
+
+# Set VF count to 0 (match the address to main GPU address!)
+echo 0 > /sys/bus/pci/devices/0000\:03\:00.0/sriov_numvfs
+# Unbind current driver
+root@pve:~# echo "0000:03:00.1" > /sys/bus/pci/devices/0000\:03\:00.1/driver/unbind 
+# Inform vfio-pci of new device
+root@pve:~# echo "8086 e223" > /sys/bus/pci/drivers/vfio-pci/new_id 
+# Bind new device to vfio-pci
+echo 0000:03:00.1 > /sys/bus/pci/drivers/vfio-pci/bind
+
+# One liner: Find GPU set PWR LIM to 180W
+echo 180000000 > $(find /sys/devices -path "*/0000:03:00.0/hwmon/hwmon*/power1_cap" 2>/dev/null | head -1)
+
+
+## Sway
+# Headless Linux is still a fucking pain,
+# using nested sway instances is equally a pain without proper configs.
+[REDACTED@REDACTED ~]$ cat .config/systemd/REDACTED/sway-headless.service 
+[Unit]
+Description=Headless Sway on Arc B70 VF
+After=graphical-session-pre.target
+
+[Service]
+Type=simple
+Environment=WLR_BACKENDS=headless,libinput
+Environment=WLR_LIBINPUT_NO_DEVICES=1
+Environment=WLR_DRM_DEVICES=/dev/dri/card0
+Environment=WLR_NO_HARDWARE_CURSORS=1
+Environment=WLR_RENDERER=gles2
+Environment=LIBVA_DRIVER_NAME=iHD
+ExecStart=/usr/bin/sway
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+
+
+
+[REDACTED@REDACTED ~]$ cat .config/systemd/REDACTED/sway-headless.service 
+[Unit]
+Description=Headless Sway (Arc B70 VF test)
+After=graphical-session-pre.target
+
+[Service]
+Type=simple
+Environment=WLR_BACKENDS=headless,libinput
+Environment=WLR_LIBINPUT_NO_DEVICES=1
+Environment=WLR_DRM_DEVICES=/dev/dri/card0
+Environment=WLR_NO_HARDWARE_CURSORS=1
+Environment=WLR_RENDERER=gles2
+Environment=LIBVA_DRIVER_NAME=iHD
+ExecStart=/usr/bin/sway
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+[REDACTED@REDACTED ~]$ cat .config/systemd/REDACTED/sunshine.service 
+[Unit]
+Description=Sunshine
+After=sway-headless.service
+Requires=sway-headless.service
+
+[Service]
+Type=simple
+# Give Sway a sec, just in case
+ExecStartPre=/bin/sleep 2
+Environment=WAYLAND_DISPLAY=wayland-1
+Environment=XDG_RUNTIME_DIR=/run/REDACTED/%U
+Environment=LIBVA_DRIVER_NAME=iHD
+ExecStart=/usr/bin/sunshine
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
+
+
+# Match the actual device to the GPU, if you have for example VIRT-IO gpu as well.
+# Idk if enum can change from one boot to another, i dont really care.
+[REDACTED@REDACTED ~]$ cat .config/sunshine/sunshine.conf 
+encoder = vaapi
+adapter_name = /dev/dri/renderD128
+capture = wlr
+av1_mode = 3
+hevc_mode = 3
+min_threads = 6
+qp = 14
+origin_web_ui_allowed = pc
+
+
+
+# Don't wait for manual login to make life tolerable
+loginctl enable-linger $REDACTED
