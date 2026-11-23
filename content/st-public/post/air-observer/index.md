@@ -1,5 +1,5 @@
 +++
-title = "AirObserver, A PoE Powered Indoor Air Quality Sensor Node"
+title = "AirObserver, an indoor air quality sensor node"
 date = 2026-04-15
 
 emoji = "☁️⚡"
